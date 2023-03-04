@@ -1,8 +1,12 @@
-import "./App.css";
-import Header from "./components/header";
 import NavbarApp from "./components/navbar";
+import Header from "./components/header";
+import "./App.css";
+import Galery from "./components/galery";
+import { useEffect, useState } from "react";
+
 
 function App() {
+  
   return (
     <>
       <NavbarApp />
@@ -11,6 +15,7 @@ function App() {
         mobileText="Hacemos monerías, pero no tiramos frutas"
         headerClass="desarrollo-web"
       />
+      <Galery/>
     </>
   );
 }

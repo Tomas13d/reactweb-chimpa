@@ -1,7 +1,7 @@
 header.desarrollo-web {
     height: 100vh;
-    background: url(../../assets/images/img-header-desarrollo-web.svg) right bottom no-repeat,
-        url(../../assets/images/bg-header-desarrollo-web.jpg) center center no-repeat;
+    background: url(../../../public/images/img-header-desarrollo-web.svg) right bottom no-repeat,
+        url(../../../public/images/bg-header-desarrollo-web.jpg) center center no-repeat;
     background-size: 43vw, cover;
 }
 

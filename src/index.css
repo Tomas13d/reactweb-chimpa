@@ -69,13 +69,13 @@ body {
     color: white;
     background: var(--darkBlue);
     font-family: var(--circularLight);
-    cursor: url(./assets/images/cursor.svg), pointer;
+    cursor: url(../public/images/cursor.svg), pointer;
 }
 
 a {
     cursor: pointer;
     text-decoration: none;
-    cursor: url(./assets/images/cursor-hover.svg), pointer;
+    cursor: url(../public/images/cursor-hover.svg), pointer;
 }
 
 ul {

@@ -43,12 +43,12 @@
   height: 42px;
   border: none;
   vertical-align: middle;
-  background: url(../../assets/images/icon-feather-chevron-down.svg) center
+  background: url(../../../public/images/icon-feather-chevron-down.svg) center
     center no-repeat;
 }
 
 .custom-nav .btn-white:hover {
-  cursor: url(../../assets/images/cursor-contacto.svg), pointer !important;
+  cursor: url(../../../public/images/cursor-contacto.svg), pointer !important;
 }
 
 .menu-wrap {
@@ -65,7 +65,7 @@
   width: 60px;
   height: 60px;
   position: absolute;
-  cursor: url(../../assets/images/cursor.svg), pointer;
+  cursor: url(../../../public/images/cursor.svg), pointer;
 }
 
 .hamburger {
@@ -213,7 +213,7 @@
 
 .menu-wrap .menu > div > div > ul > li > a:hover {
   background-position: 0;
-  cursor: url(../../assets/images/cursor.svg), pointer;
+  cursor: url(../../../public/images/cursor.svg), pointer;
 }
 
 .menu-wrap .menu > div > div > ul > li > a:hover::before {

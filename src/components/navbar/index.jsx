@@ -12,41 +12,39 @@ function NavbarApp() {
   return (
     <>
     <Navbar id="navbar" className="navbar custom-nav">
-
-    <Container fluid className="container position-relative">
-    <Navbar.Brand href="#" className="d-none d-md-block"><ChimpanceLogo/></Navbar.Brand>
-    <Navbar.Brand href="#" className="col-12 d-flex justify-content-center d-md-none"><Iso/></Navbar.Brand>
-        <div className="d-flex align-items-center">
-            <a id="contact_nav" rel="noreferrer" href="https://web.whatsapp.com/send?phone=+5493516503470&amp;text=Buenos%20días,%20quiero%20mas%20info%20sobre%20desarrollo%20web" target="_blank"  className={`btn btn-white d-none ${activeMenu ? "" : "d-md-block"}`}>Contactanos</a>
-            <div className="d-none d-md-block">
-                <input type="checkbox" className="toggler" id="toggleButton" onClick={() => setActiveMenu(!activeMenu)}/>
-                <div className={`hamburger ${activeMenu ? "checked" : ""}`} id="hamburger"><div></div></div>
+        <Container fluid className="container position-relative">
+            <Navbar.Brand href="/" className="d-none d-md-block"><ChimpanceLogo/></Navbar.Brand>
+            <Navbar.Brand href="/" className="col-12 d-flex justify-content-center d-md-none"><Iso/></Navbar.Brand>
+            <div className="d-flex align-items-center">
+                <a id="contact_nav" rel="noreferrer" href="https://web.whatsapp.com/send?phone=+5493516503470&amp;text=Buenos%20días,%20quiero%20mas%20info%20sobre%20desarrollo%20web" target="_blank"  className={`btn btn-white d-none ${activeMenu ? "" : "d-md-block"}`}>Contactanos</a>
+                <div className="d-none d-md-block">
+                    <input type="checkbox" className="toggler" id="toggleButton" onClick={() => setActiveMenu(!activeMenu)}/>
+                    <div className={`hamburger ${activeMenu ? "checked" : ""}`} id="hamburger"><div></div></div>
+                </div>
+            </div>
+        </Container>
+    </Navbar>
+    <Container className="menu-wrap nav-mobile">
+        <div className={`menu ${activeMenu ? "checked" : ""}`} id="menu">
+            <div>
+                <div id="bg-video" className="d-none d-md-block video-container">
+                        <dotlottie-player id="nav-deskLottie" autoplay loop  mode="normal" src={lottie} background="transparent" style={{width: "100vw", height: "100vh", zIndex:0, transform: "scale(1.3)"}}/>
+                </div>
+                <div id="bg-video" className="d-block d-md-none video-container" >
+                        <dotlottie-player autoplay loop  mode="normal" src={lottie} background="transparent" style={{width: "100vw", height: "100vh", zIndex:0, transform: "scale(1.3)"}}/>
+                </div>
+                <div>
+                    <ul className="p-0">
+                        <li className="mb-4"><ImgIsoOjos customClass="eyes-illustration"/></li> 
+                        <li><a className="ff-circularBold" href="desarrollo-web.php">Web UX UI</a></li>
+                        {/* <li><a className="ff-circularBold" target="_blank"  href="https://chimpance.digital/branding">Branding</a></li> 
+                        <li><a className="ff-circularBold" target="_blank"  href="./">Mkt Digital</a></li>  */}
+                        <li><a className="ff-circularBold" href="#form" id="link">Contacto</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </Container>
-</Navbar>
-
-<Container className="menu-wrap nav-mobile">
-    <div className={`menu ${activeMenu ? "checked" : ""}`} id="menu">
-        <div>
-        <div id="bg-video" className="d-none d-md-block video-container">
-                <dotlottie-player id="nav-deskLottie" autoplay loop  mode="normal" src={lottie} background="transparent" style={{width: "100vw", height: "100vh", zIndex:0, transform: "scale(1.3)"}}/>
-            </div>
-            <div id="bg-video" className="d-block d-md-none video-container" >
-                <dotlottie-player autoplay loop  mode="normal" src={lottie} background="transparent" style={{width: "100vw", height: "100vh", zIndex:0, transform: "scale(1.3)"}}/>
-            </div>
-            <div>
-                <ul className="p-0">
-                     <li className="mb-4"><ImgIsoOjos customClass="eyes-illustration"/></li> 
-                    <li><a className="ff-circularBold" href="desarrollo-web.php">Web UX UI</a></li>
-                    {/* <li><a className="ff-circularBold" target="_blank"  href="https://chimpance.digital/branding">Branding</a></li> 
-                    <li><a className="ff-circularBold" target="_blank"  href="./">Mkt Digital</a></li>  */}
-                    <li><a className="ff-circularBold" href="#form" id="link">Contacto</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</Container>
 </>
   );
 }

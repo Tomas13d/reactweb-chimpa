@@ -64,7 +64,26 @@
 }
 
 
+body {
+    font-size: 16px;
+    color: white;
+    background: var(--darkBlue);
+    font-family: var(--circularLight);
+    cursor: url(./assets/images/cursor.svg), pointer;
+}
+
 a {
     cursor: pointer;
     text-decoration: none;
+    cursor: url(./assets/images/cursor-hover.svg), pointer;
+}
+
+.btn {
+    padding: 12px 20px;
+    font-size: 21px;
+}
+.btn-white {
+    background: white ;
+    color: var(--lightBlue-01);
+    font-family: var(--circularBold);
 }

@@ -7,7 +7,6 @@
     position: fixed;
     padding: 1.25rem 0;
     transition: all .5s ease-in-out;
-    background-color: rgb(20, 78, 188) !important;
 }
 
 .background-filter {
@@ -16,6 +15,10 @@
 
 .custom-nav .dropdown .btn {
     background: none;
+}
+
+#navbar .btn {
+    font-size: 16px;
 }
 
 .custom-nav .dropdown-menu {
@@ -42,6 +45,7 @@
     vertical-align: middle;
     background: url(../../assets/images/icon-feather-chevron-down.svg) center center no-repeat;
 }
+
 
 .custom-nav .btn-white:hover {
     cursor: url(../../assets/images/cursor-contacto.svg), pointer !important;
@@ -164,6 +168,11 @@
     max-height: 100vh;
     text-align: center;
     transition: opacity 0.4s ease;
+}
+.eyes-illustration {
+    width: 80px;
+    height: 80px;
+    position: relative;
 }
 
 .menu-wrap .menu>div>div>ul>li {

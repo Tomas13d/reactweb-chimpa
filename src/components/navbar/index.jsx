@@ -17,7 +17,7 @@ function NavbarApp() {
     <Navbar.Brand href="#" className="d-none d-md-block"><ChimpanceLogo/></Navbar.Brand>
     <Navbar.Brand href="#" className="col-12 d-flex justify-content-center d-md-none"><Iso/></Navbar.Brand>
         <div className="d-flex align-items-center">
-            <a id="contact_nav" href="https://web.whatsapp.com/send?phone=+5493516503470&amp;text=Buenos%20días,%20quiero%20mas%20info%20sobre%20desarrollo%20web" target="_blank"  className={`btn btn-white d-none ${activeMenu ? "" : "d-md-block"}`}>Contactanos</a>
+            <a id="contact_nav" rel="noreferrer" href="https://web.whatsapp.com/send?phone=+5493516503470&amp;text=Buenos%20días,%20quiero%20mas%20info%20sobre%20desarrollo%20web" target="_blank"  className={`btn btn-white d-none ${activeMenu ? "" : "d-md-block"}`}>Contactanos</a>
             <div className="d-none d-md-block">
                 <input type="checkbox" className="toggler" id="toggleButton" onClick={() => setActiveMenu(!activeMenu)}/>
                 <div className={`hamburger ${activeMenu ? "checked" : ""}`} id="hamburger"><div></div></div>

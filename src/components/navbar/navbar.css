@@ -1,223 +1,229 @@
 /* menu */
 
 #navbar {
-    z-index: 101;
-    width: 100%;
-    height: 6.5rem;
-    position: fixed;
-    padding: 1.25rem 0;
-    transition: all .5s ease-in-out;
+  z-index: 101;
+  width: 100%;
+  height: 6.5rem;
+  position: fixed;
+  padding: 1.25rem 0;
+  transition: all 0.5s ease-in-out;
 }
 
 .background-filter {
-    backdrop-filter: blur(15px) brightness(80%) contrast(100%);
+  backdrop-filter: blur(15px) brightness(80%) contrast(100%);
 }
 
 .custom-nav .dropdown .btn {
-    background: none;
+  background: none;
 }
 
 #navbar .btn {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .custom-nav .dropdown-menu {
-    border: none;
-    position: absolute;
-    background: var(--darkBlue);
+  border: none;
+  position: absolute;
+  background: var(--darkBlue);
 }
 
 .custom-nav .dropdown-menu .dropdown-item {
-    color: white;
-    font-family: var(--circularBold);
+  color: white;
+  font-family: var(--circularBold);
 }
 
 .custom-nav .dropdown-menu .dropdown-item:hover {
-    background: var(--lightBlue-02);
+  background: var(--lightBlue-02);
 }
 
 .custom-nav .dropdown-toggle::after,
 .nav-mobile .dropdown-toggle::after {
-    margin: 0;
-    width: 42px;
-    height: 42px;
-    border: none;
-    vertical-align: middle;
-    background: url(../../assets/images/icon-feather-chevron-down.svg) center center no-repeat;
+  margin: 0;
+  width: 42px;
+  height: 42px;
+  border: none;
+  vertical-align: middle;
+  background: url(../../assets/images/icon-feather-chevron-down.svg) center
+    center no-repeat;
 }
 
-
 .custom-nav .btn-white:hover {
-    cursor: url(../../assets/images/cursor-contacto.svg), pointer !important;
+  cursor: url(../../assets/images/cursor-contacto.svg), pointer !important;
 }
 
 .menu-wrap {
-    top: 0;
-    left: 0;
-    z-index: 21;
-    width: 100%;
-    position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 21;
+  width: 100%;
+  position: fixed;
 }
 
 .toggler {
-    opacity: 0;
-    z-index: 100;
-    width: 60px;
-    height: 60px;
-    position: absolute;
-    cursor: url(../../assets/images/cursor.svg), pointer;
+  opacity: 0;
+  z-index: 100;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  cursor: url(../../assets/images/cursor.svg), pointer;
 }
 
 .hamburger {
-    z-index: 100;
-    width: 60px;
-    padding: 1rem;
+  z-index: 100;
+  width: 60px;
+  padding: 1rem;
 }
 
 /* Hamburger line */
-.hamburger>div {
-    position: relative;
-    width: 100%;
-    height: 2px;
-    display: flex;
-    align-items: center;
-    background-color: #fff;
-    justify-content: center;
-    transition: all 0.4s ease;
+.hamburger > div {
+  position: relative;
+  width: 100%;
+  height: 2px;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  justify-content: center;
+  transition: all 0.4s ease;
 }
 
 /* Top and bottom lines */
-.hamburger>div:before,
-.hamburger>div:after {
-    content: '';
-    position: absolute;
-    z-index: 1;
-    top: -10px;
-    width: 100%;
-    height: 2px;
-    background: inherit;
+.hamburger > div:before,
+.hamburger > div:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: -10px;
+  width: 100%;
+  height: 2px;
+  background: inherit;
 }
 
 /* Moves line down */
-.hamburger>div:after {
-    top: 10px;
+.hamburger > div:after {
+  top: 10px;
 }
 
 /* Toggler animate */
-.hamburger.checked>div {
-    transform: rotate(135deg);
+.hamburger.checked > div {
+  transform: rotate(135deg);
 }
 
 /* Turn Lines into X */
-.hamburger.checked>div:before,
-.hamburger.checked>div:after {
-    top: 0;
-    transform: rotate(90deg);
+.hamburger.checked > div:before,
+.hamburger.checked > div:after {
+  top: 0;
+  transform: rotate(90deg);
 }
 
 /* Rotate on hover when checked */
-.toggler:checked:hover+.hamburger>div {
-    transform: rotate(225deg);
+.toggler:checked:hover + .hamburger > div {
+  transform: rotate(225deg);
 }
 
 /* Show menu */
 .menu-wrap .menu.checked {
-    visibility: visible;
+  visibility: visible;
 }
 
-.menu-wrap .menu.checked>div {
-    transform: scale(1);
-    transition-duration: 0.75s;
+.menu-wrap .menu.checked > div {
+  transform: scale(1);
+  transition-duration: 0.75s;
 }
 
-.menu-wrap .menu.checked>div>div {
-    opacity: 1;
-    transition: opacity 0.4s ease;
+.menu-wrap .menu.checked > div > div {
+  opacity: 1;
+  transition: opacity 0.4s ease;
 }
 
 .menu-wrap .menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    overflow: hidden;
-    visibility: hidden;
-    align-items: center;
-    justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+  visibility: hidden;
+  align-items: center;
+  justify-content: center;
 }
 
-.menu-wrap .menu>div {
-    flex: none;
-    display: flex;
-    border-radius: 50%;
-    align-items: center;
-    transform: scale(0);
-    justify-content: center;
-    transition: all 0.4s ease;
+.menu-wrap .menu > div {
+  flex: none;
+  display: flex;
+  border-radius: 50%;
+  align-items: center;
+  transform: scale(0);
+  justify-content: center;
+  transition: all 0.4s ease;
 }
 
-.menu-wrap .menu>div video {
-    position: absolute;
+.menu-wrap .menu > div video {
+  position: absolute;
 }
 
-.menu-wrap .menu>div>div {
-    opacity: 0;
-    max-width: 90vw;
-    max-height: 100vh;
-    text-align: center;
-    transition: opacity 0.4s ease;
+.menu-wrap .menu > div > div {
+  opacity: 0;
+  max-width: 90vw;
+  max-height: 100vh;
+  text-align: center;
+  transition: opacity 0.4s ease;
 }
 .eyes-illustration {
-    width: 80px;
-    height: 80px;
-    position: relative;
+  width: 80px;
+  height: 80px;
+  position: relative;
 }
 
-.menu-wrap .menu>div>div>ul>li {
-    font-size: 60px;
-    list-style: none;
-    font-family: var(--circularBook);
+.menu-wrap .menu > div > div > ul > li {
+  font-size: 60px;
+  list-style: none;
+  font-family: var(--circularBook);
 }
 
-.menu-wrap .menu>div>div>ul>li>a {
-    background-image: linear-gradient(to right, var(--yellow), var(--yellow) 50%, #ffff 50%);
-    background-size: 200% 100%;
-    background-position: -100%;
-    display: inline-block;
-    padding: 5px 0;
-    position: relative;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    transition: all 0.3s ease-in-out;
+.menu-wrap .menu > div > div > ul > li > a {
+  background-image: linear-gradient(
+    to right,
+    var(--yellow),
+    var(--yellow) 50%,
+    #ffff 50%
+  );
+  background-size: 200% 100%;
+  background-position: -100%;
+  display: inline-block;
+  padding: 5px 0;
+  position: relative;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease-in-out;
 }
 
-.menu-wrap .menu>div>div>ul>li>a:before {
-    content: '';
-    left: 0;
-    width: 0;
-    height: 3px;
-    bottom: -3px;
-    display: block;
-    position: absolute;
-    background: var(--yellow);
-    transition: all 0.3s ease-in-out;
+.menu-wrap .menu > div > div > ul > li > a:before {
+  content: "";
+  left: 0;
+  width: 0;
+  height: 3px;
+  bottom: -3px;
+  display: block;
+  position: absolute;
+  background: var(--yellow);
+  transition: all 0.3s ease-in-out;
 }
 
-.menu-wrap .menu>div>div>ul>li>a:hover {
-    background-position: 0;
-    cursor: url(../../assets/images/cursor.svg), pointer;
+.menu-wrap .menu > div > div > ul > li > a:hover {
+  background-position: 0;
+  cursor: url(../../assets/images/cursor.svg), pointer;
 }
 
-.menu-wrap .menu>div>div>ul>li>a:hover::before {
-    width: 100%;
+.menu-wrap .menu > div > div > ul > li > a:hover::before {
+  width: 100%;
 }
 
-.ff-circularBold{
-    font-family: var(--circularBold);
+.ff-circularBold {
+  font-family: var(--circularBold);
 }
 
-.video-container{
-    position: absolute;
+.video-container {
+  position: absolute;
 }

@@ -78,6 +78,44 @@ a {
     cursor: url(./assets/images/cursor-hover.svg), pointer;
 }
 
+ul {
+    list-style-type: none;
+}
+
+h1,
+h3 {
+    font-family: var(--circularBlack);
+}
+
+h2 {
+    line-height: .9;
+    font-family: var(--circularBold);
+}
+
+h1 {
+    font-size: 100px;
+}
+
+h2 {
+    font-size: 80px;
+}
+
+h3 {
+    font-size: 50px;
+}
+
+h4 {
+    font-size: 28px;
+}
+
+h5 {
+    font-size: 21px;
+}
+
+strong {
+    font-family: var(--circularBold);
+}
+
 .btn {
     padding: 12px 20px;
     font-size: 21px;
@@ -87,3 +125,7 @@ a {
     color: var(--lightBlue-01);
     font-family: var(--circularBold);
 }
+
+.ff-circularBold {
+    font-family: var(--circularBold);
+  }

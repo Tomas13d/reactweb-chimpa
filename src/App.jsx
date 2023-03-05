@@ -5,7 +5,6 @@ import Galery from "./components/galery";
 
 
 function App() {
-  
   return (
     <>
       <NavbarApp />

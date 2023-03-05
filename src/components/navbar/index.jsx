@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Container, Navbar } from "react-bootstrap";
 import '@dotlottie/player-component';
 import ChimpanceLogo from "../../assets/illustrations/ChimpanceLogo";
@@ -8,9 +8,24 @@ import "./navbar.css"
 
 function NavbarApp() {
     const [activeMenu, setActiveMenu] = useState(false)
+    const [navBackground, setNavBackground] = useState(false)
+    const navRef = useRef()
+    navRef.current = navBackground
+    useEffect(() => {
+      const handleScroll = () => {
+        const show = window.scrollY > 50
+        if (navRef.current !== show) {
+          setNavBackground(show)
+        }
+      }
+      document.addEventListener('scroll', handleScroll)
+      return () => {
+        document.removeEventListener('scroll', handleScroll)
+      }
+    }, [])
   return (
     <>
-    <Navbar id="navbar" className="navbar custom-nav">
+    <Navbar id="navbar" className={`navbar custom-nav ${navBackground ? "background-filter" : ""}`}>
         <Container fluid className="container position-relative">
             <Navbar.Brand href="/" className="d-none d-md-block"><ChimpanceLogo/></Navbar.Brand>
             <Navbar.Brand href="/" className="col-12 d-flex justify-content-center d-md-none"><ChimpanceLogo/></Navbar.Brand>

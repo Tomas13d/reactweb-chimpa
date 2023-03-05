@@ -1,6 +1,5 @@
 import Shuffle from 'shufflejs';
 import $ from 'jquery'; 
-import 'magnific-popup/dist/jquery.magnific-popup';
 
 const jqueryMasonryGalery = () => {
     // Progress Bar
@@ -33,14 +32,7 @@ const jqueryMasonryGalery = () => {
         }
       });
   
-      $('.portfolio-gallery').each(function () {
-        $(this).find('.popup-gallery').magnificPopup({
-          type: 'image',
-          gallery: {
-            enabled: true,
-          },
-        });
-      });
+    
 }
 
 export default jqueryMasonryGalery;

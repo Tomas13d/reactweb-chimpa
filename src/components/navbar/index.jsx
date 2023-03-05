@@ -4,7 +4,6 @@ import '@dotlottie/player-component';
 import ChimpanceLogo from "../../assets/illustrations/ChimpanceLogo";
 import ImgIsoOjos from "../../assets/illustrations/ImgIsoOjos";
 import lottie from "../../assets/lotties/bg-jungla-desk.lottie"
-import Iso from "../../assets/illustrations/Iso";
 import "./navbar.css"
 
 function NavbarApp() {

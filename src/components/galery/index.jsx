@@ -9,13 +9,14 @@ import GaleryCard from "../galeryCard";
 function Galery() {
   const [proyects, setProyects] = useState([]);
   const [categories, setCategories] = useState([""]);
+  const [flag, setFlag] =useState(false);
 
-  useLayoutEffect(() => {
-    if (proyects[1]) {
+  useEffect(() => {
+    if (proyects[0]) {
       AOS.init({ once: true });
       jqueryMasonryGalery();
     }
-  }, []);
+  }, [flag]);
 
   useEffect(() => {
     if (galeryProyects) {
@@ -27,6 +28,7 @@ function Galery() {
       });
       setCategories(proyectCategories);
       setProyects(proyectCards);
+      setFlag(!flag)
     }
   }, [galeryProyects]);
 

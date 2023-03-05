@@ -2,7 +2,6 @@ import NavbarApp from "./components/navbar";
 import Header from "./components/header";
 import "./App.css";
 import Galery from "./components/galery";
-import { useEffect, useState } from "react";
 
 
 function App() {

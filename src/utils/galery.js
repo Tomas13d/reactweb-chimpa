@@ -1914,6 +1914,7 @@ const trasnformGaleryJson = (galeryJson) => {
   const order = [[], [], [], [], []];
   galeryJson.forEach((proyect) => {
     proyect.CATEGORIA = proyect.CATEGORIA.split(" ");
+    proyect.PROYECTO = proyect.PROYECTO.trim()
     proyect.TAG = proyect.TAG.split(" ");
     proyect.TAG_MOCK = proyect.TAG_MOCK.split(" ");
     getCategories(proyect.CATEGORIA);

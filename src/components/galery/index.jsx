@@ -50,7 +50,7 @@ function Galery() {
             <div className="btn-group btn-group-toggle " data-toggle="buttons">
               {categories[0] &&
                 categories.map((category, i) => (
-                  <label className="btn" key={i + new Date().getTime}>
+                  <label className="btn chip" key={i + new Date().getTime}>
                     <input
                       type="radio"
                       name="shuffle-filter"
@@ -93,7 +93,7 @@ function Galery() {
                       <div className="overlay-inner">
                         <div className="overlay-content">
                           <h5 className="mb-0">{proyect.PROYECTO}</h5>
-                          <p>{proyect.CATEGORIA}</p>
+                          <p>{proyect.CATEGORIA.join()}</p>
                         </div>
                       </div>
                     </div>

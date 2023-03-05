@@ -3,12 +3,12 @@ import "./header.css";
 
 function Header({deskTopText, mobileText, headerClass }) {
   return (
-    <header class={`${headerClass} d-flex align-items-center`}>
+    <header className={`${headerClass} d-flex align-items-center`}>
     <Container>
         <Row>
             <Col md="6">
-                <h3 class="d-none d-md-block">{deskTopText}</h3>
-                <h3 class="d-block d-md-none text-center">{mobileText}</h3>
+                <h3 className="d-none d-md-block">{deskTopText}</h3>
+                <h3 className="d-block d-md-none text-center">{mobileText}</h3>
             </Col>
         </Row>
     </Container>

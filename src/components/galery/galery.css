@@ -6,6 +6,9 @@
     box-shadow: none !important;
     outline: 0 !important;
   }
+  .portfolio .btn-group .active-chip {
+    background-color: #36A9E1;
+  }
 
   .portfolio .btn-group .btn {
     margin: 10px;
@@ -16,6 +19,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    min-width: 135px;
     font-weight: 200;
     color: #FFF;
   }
@@ -24,6 +28,7 @@
   }
   .radio-hidden{
     display: none;
+    flex-grow: 1;
   }
 
   .portfolio .btn-group:not(:first-child) > .btn, .portfolio .btn-group > .btn:not(:first-child) {

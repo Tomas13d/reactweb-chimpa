@@ -37,11 +37,11 @@ function Galery() {
     <section className="portfolio ">
       <Container className="container">
         <Row className="mb-5 justify-content-center">
-          <div className="col-10 text-center">
+          <div className="col-12">
             <div className="btn-group btn-group-toggle " data-toggle="buttons">
               {categories[0] &&
                 categories.map((category, i) => (
-                  <label className="btn" key={i + new Date().getTime}>
+                  <label className={`btn ${activeCategory === category ? "active-chip" : ""}`} key={i + new Date().getTime}>
                     <input
                       type="radio"
                       name="shuffle-filter"

@@ -1,8 +1,7 @@
 import NavbarApp from "./components/navbar";
 import Header from "./components/header";
 import "./App.css";
-import Galery from "./components/galery";
-
+import Galery from "./components/galery/desktop";
 
 function App() {
   return (
@@ -13,7 +12,7 @@ function App() {
         mobileText="Hacemos monerías, pero no tiramos frutas"
         headerClass="desarrollo-web"
       />
-      <Galery/>
+      <Galery sectionTitle={"Hacemos monerías, pero no tiramos frutas"} />
     </>
   );
 }

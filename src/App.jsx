@@ -10,7 +10,7 @@ function App() {
       <Header
         deskTopText="Construimos tu negocio en la web"
         mobileText="Hacemos monerías, pero no tiramos frutas"
-        headerClass="desarrollo-web"
+        headerClass="proyectos"
       />
       <Galery sectionTitle={"Hacemos monerías, pero no tiramos frutas"} />
     </>

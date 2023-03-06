@@ -36,8 +36,8 @@ function Galery({ sectionTitle }) {
     <Container className="galery-section">
       <div className="mb-5">
         <div className="yellow-separator mb-4"></div>
-        <h5 class="mb-2 ff-circularBold">{sectionTitle}</h5>
-        <h5 class="fc-lightBlue mb-3 ff-circularBold">Nuestros Proyectos</h5>
+        <h5 class="mb-1 ff-circularBold">{sectionTitle}</h5>
+        <h5 class="fc-lightBlue mb-1 ff-circularBold">Nuestros Proyectos</h5>
       </div>
       <Container className="portfolio">
         <Container>

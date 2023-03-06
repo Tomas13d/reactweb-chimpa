@@ -1,43 +1,34 @@
 import { useEffect, useState } from "react";
 import AOS from "aos";
-import Shuffle from "shufflejs";
 import { Container, Row } from "react-bootstrap";
 import { sortedJson, allCategories } from "../../utils/galery";
 import "./galery.css";
+import jqueryMasonryGalery from "./galeryScript";
 
 function Galery() {
   const [proyects, setProyects] = useState([]);
   const [categories, setCategories] = useState([""]);
-  const [myShuffle, setMyShuffle] = useState();
   const [flag, setFlag] = useState(false);
   const [activeCategory, setActiveCategory] = useState();
 
+
   useEffect(() => {
     AOS.init({ once: true });
-    const itemShuffle = new Shuffle(
-      document.querySelector(".shuffle-wrapper"),
-      {
-        itemSelector: ".shuffle-item",
-        buffer: 1,
-      }
-    );
-    setMyShuffle(itemShuffle);
+    jqueryMasonryGalery();
   }, [flag]);
 
   useEffect(() => {
     if (sortedJson) {
       setCategories(allCategories);
       setProyects(sortedJson);
-      setFlag(!flag);
+      setFlag(flag ? false : true);
     }
   }, [sortedJson]);
 
   const handleChange = (e) => {
-    const input = e.currentTarget;
-    if (input.checked) {
-      myShuffle.filter(input.value);
-    }
-  };
+   setActiveCategory(e.target.value);
+  }; 
+
   const getRandomInt = (min, max) => {
     return Math.floor(Math.random() * (max - min)) + min;
   };
@@ -50,12 +41,13 @@ function Galery() {
             <div className="btn-group btn-group-toggle " data-toggle="buttons">
               {categories[0] &&
                 categories.map((category, i) => (
-                  <label className="btn chip" key={i + new Date().getTime}>
+                  <label className="btn" key={i + new Date().getTime}>
                     <input
                       type="radio"
                       name="shuffle-filter"
                       value={category}
                       onChange={handleChange}
+                      className="radio-hidden"
                     />
                     {category === "all" ? "Todos" : category }
                   </label>

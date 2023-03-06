@@ -79,7 +79,7 @@ function Galery({ sectionTitle }) {
                   <div className="position-relative inner-box">
                     <div className="image position-relative ">
                       <img
-                        src={`${proyect.IMG_SRC}${getRandomInt(1, 9)}.jpg`}
+                        src={`images/portfolio/${proyect.IMG_SRC}`}
                         alt={proyect.PROYECTO}
                         className="img-fluid w-100 d-block"
                       />

@@ -18,7 +18,7 @@ const galeryProyects = [
     LINK: "https://gusespada.com/",
     TAG_MOCK: "",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "Gus_espada.png",
   },
   {
     ID: "2",
@@ -41,7 +41,7 @@ const galeryProyects = [
     LINK: "No funciona",
     TAG_MOCK: "Empresarial",
     PAIS: "Estados Unidos",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "Logiter.png",
   },
   {
     ID: "3",
@@ -62,7 +62,7 @@ const galeryProyects = [
     LINK: "https://linetec.com.ar/",
     TAG_MOCK: "",
     PAIS: "Argentina",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "Linetec.png",
   },
   {
     ID: "4",
@@ -84,7 +84,7 @@ const galeryProyects = [
     LINK: "No funciona",
     TAG_MOCK: "",
     PAIS: "Alemania",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "Taller.png",
   },
   {
     ID: "5",
@@ -106,7 +106,7 @@ const galeryProyects = [
     LINK: "https://pablolavezzari.com/",
     TAG_MOCK: "",
     PAIS: "Argentina",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "Pablo_Lavezzari.png",
   },
   {
     ID: "6",
@@ -128,7 +128,7 @@ const galeryProyects = [
     LINK: "https://delgredal.com/",
     TAG_MOCK: "",
     PAIS: "Argentina",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "Gardel_vino.png",
   },
   {
     ID: "7",
@@ -149,7 +149,7 @@ const galeryProyects = [
     LINK: "https://icesweb.org/",
     TAG_MOCK: "",
     PAIS: "Argentina",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "ICES.png",
   },
   {
     ID: "8",
@@ -170,7 +170,7 @@ const galeryProyects = [
     LINK: "https://fucaarte.org/",
     TAG_MOCK: "",
     PAIS: "Argentina",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "Fuca.png",
   },
   {
     ID: "9",
@@ -191,7 +191,7 @@ const galeryProyects = [
     LINK: "https://centrofamiliarvirtual.fundaciondelasfamilias.cl/",
     TAG_MOCK: "",
     PAIS: "Chile",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "Fundacion_familias.png",
   },
   {
     ID: "10",
@@ -212,12 +212,12 @@ const galeryProyects = [
     LINK: "https://aqua.capital/",
     TAG_MOCK: "#Wordpress #UI Personalizado #Blog",
     PAIS: "Brasil",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "Aqua_capital.png",
   },
   {
     ID: "11",
-    PROYECTO: "Bienal ",
-    TITULO: "Galeria de Arte ",
+    PROYECTO: "Bienal",
+    TITULO: "Galeria de Arte",
     SOBRE: "",
     RURO: "",
     CLIENTE: "Di Cuore",
@@ -233,11 +233,11 @@ const galeryProyects = [
     LINK: "https://bienal.fucaarte.org/",
     TAG_MOCK: "#Wordpress #UI Personalizado #Blog",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "Bienal.png",
   },
   {
     ID: "12",
-    PROYECTO: "Aeromas ",
+    PROYECTO: "Aeromas",
     TITULO: "Vuelos en Jet privados",
     SOBRE: "",
     RURO: "",
@@ -254,7 +254,7 @@ const galeryProyects = [
     LINK: "https://aeromas.com/",
     TAG_MOCK: "",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "",
   },
   {
     ID: "13",
@@ -275,7 +275,7 @@ const galeryProyects = [
     LINK: "",
     TAG_MOCK: "",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "aeromas_back.png",
   },
   {
     ID: "14",
@@ -296,7 +296,7 @@ const galeryProyects = [
     LINK: "https://www.marketingesa.com/",
     TAG_MOCK: "#Onepage #Wordpress",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "esa.png",
   },
   {
     ID: "15",
@@ -317,7 +317,7 @@ const galeryProyects = [
     LINK: "https://www.marianpd.com/",
     TAG_MOCK: "#Custom #Bootstrap #Admin",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "MArian_pd.png",
   },
   {
     ID: "16",
@@ -338,7 +338,7 @@ const galeryProyects = [
     LINK: "https://tres51.com/",
     TAG_MOCK: "#Bootstrap #Multidioma",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "Tres_51.png",
   },
   {
     ID: "17",
@@ -360,7 +360,7 @@ const galeryProyects = [
     LINK: "https://efitech.villanueva.com.ar/",
     TAG_MOCK: "#Wordpress #Blog #Diseño UI personalizado",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "Efitech.png",
   },
   {
     ID: "18",
@@ -381,7 +381,7 @@ const galeryProyects = [
     LINK: "",
     TAG_MOCK: "",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "Grow.png",
   },
   {
     ID: "19",
@@ -402,7 +402,7 @@ const galeryProyects = [
     LINK: "https://prontophot.com/",
     TAG_MOCK: "#Bootstrap #Admin",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "Pronto.png",
   },
   {
     ID: "20",
@@ -424,7 +424,7 @@ const galeryProyects = [
     LINK: "https://xpressrendering.com/",
     TAG_MOCK: "#Wordpress #Diseño personalizado",
     PAIS: "Estados Unidos",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "XpressR.png",
   },
   {
     ID: " ",
@@ -446,7 +446,7 @@ const galeryProyects = [
     LINK: "https://www.venturi.com.ar/",
     TAG_MOCK: "",
     PAIS: "Argentina",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "venturi.png",
   },
   {
     ID: " ",
@@ -468,7 +468,7 @@ const galeryProyects = [
     LINK: "https://www.tcpcordoba.gov.ar/",
     TAG_MOCK: "",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "Tribunales_de_cuentas.png",
   },
   {
     ID: "23",
@@ -489,7 +489,7 @@ const galeryProyects = [
     LINK: "https://combici.org/",
     TAG_MOCK: "",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "Bicis.png",
   },
   {
     ID: "24",
@@ -510,7 +510,7 @@ const galeryProyects = [
     LINK: "",
     TAG_MOCK: "#Bootstrap #Admin #Pagos #Multidioma #Multimoneda",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "ecoinclusion.png",
   },
   {
     ID: "25",
@@ -531,7 +531,7 @@ const galeryProyects = [
     LINK: "",
     TAG_MOCK: "",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "Librematica.png",
   },
   {
     ID: "26",
@@ -552,7 +552,7 @@ const galeryProyects = [
     LINK: "",
     TAG_MOCK: "",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "Franco_fitt.png",
   },
   {
     ID: "27",
@@ -573,7 +573,7 @@ const galeryProyects = [
     LINK: "https://ralseff.com/cursosecretariado/",
     TAG_MOCK: "#Onepage",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "Ralseff.png",
   },
   {
     ID: "28",
@@ -594,7 +594,7 @@ const galeryProyects = [
     LINK: "",
     TAG_MOCK: "",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "Wallace.png",
   },
   {
     ID: "29",
@@ -615,7 +615,7 @@ const galeryProyects = [
     LINK: "https://www.approve-itsa.com/",
     TAG_MOCK: "#Multidioma #Bootstrap #Admin ",
     PAIS: "Estados Unidos",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "Approve-it.png",
   },
   {
     ID: "30",
@@ -636,7 +636,7 @@ const galeryProyects = [
     LINK: "",
     TAG_MOCK: "",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "yomama.png",
   },
   {
     ID: "31",
@@ -657,7 +657,7 @@ const galeryProyects = [
     LINK: "",
     TAG_MOCK: "",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "americagis.png",
   },
   {
     ID: "32",
@@ -679,7 +679,7 @@ const galeryProyects = [
     LINK: "https://groupjm.com/",
     TAG_MOCK: "#Multidioma #Multimoneda #Pagos #eComerce #Admin",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "JM_group.png",
   },
   {
     ID: "33",
@@ -700,7 +700,7 @@ const galeryProyects = [
     LINK: "https://cognitionbi.com/",
     TAG_MOCK: "#Onepage #Bootstrap",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "Cognition.png",
   },
   {
     ID: "34",
@@ -721,7 +721,7 @@ const galeryProyects = [
     LINK: "https://incesped.com/",
     TAG_MOCK: "#Bootstrap #Diseño personalizado",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "Incesped.png",
   },
   {
     ID: "35",
@@ -742,7 +742,7 @@ const galeryProyects = [
     LINK: "https://clinicasantaluciasalta.com/",
     TAG_MOCK: "#Bootstrap #Diseño personalizado",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "Clinica_santa_lucia.png",
   },
   {
     ID: "36",
@@ -763,7 +763,7 @@ const galeryProyects = [
     LINK: "https://craneo.io/",
     TAG_MOCK: "#Bootstrap #Diseño personalizado",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "Craneo.png",
   },
   {
     ID: "37",
@@ -784,7 +784,7 @@ const galeryProyects = [
     LINK: "",
     TAG_MOCK: "",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "flug.png",
   },
   {
     ID: "38",
@@ -806,7 +806,7 @@ const galeryProyects = [
     LINK: "https://www.rentautoargentina.com.ar/",
     TAG_MOCK: "#ecommerce #Laravel ",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "Rentauto.png",
   },
   {
     ID: "39",
@@ -828,7 +828,7 @@ const galeryProyects = [
     LINK: "https://ralseff.com/",
     TAG_MOCK: "#eLearning #eCoomerce #Pagos #Admin #Laravel #Bootstrap",
     PAIS: "Argentina",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "Ralseff.png",
   },
   {
     ID: "40",
@@ -849,7 +849,7 @@ const galeryProyects = [
     LINK: "https://institutoiedes.org/",
     TAG_MOCK: "",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "IEDES.png",
   },
   {
     ID: "41",
@@ -870,7 +870,7 @@ const galeryProyects = [
     LINK: "https://grupomiterra.com/",
     TAG_MOCK: "#Wordpress",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "",
   },
   {
     ID: "42",
@@ -891,12 +891,12 @@ const galeryProyects = [
     LINK: "https://lacuestavr.com.ar/",
     TAG_MOCK: "#Bootstrap",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "la_cuesta.png",
   },
   {
     ID: "43",
-    PROYECTO: "estacion",
-    TITULO: "Venta de lotes ",
+    PROYECTO: "Estacion",
+    TITULO: "Venta de lotes",
     SOBRE: "",
     RURO: "",
     CLIENTE: "Grupo Miterra",
@@ -912,7 +912,7 @@ const galeryProyects = [
     LINK: "https://estdelcarmen.com.ar/",
     TAG_MOCK: "#Bootstrap",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "estacion_del_carmen.png",
   },
   {
     ID: "45",
@@ -933,7 +933,7 @@ const galeryProyects = [
     LINK: "https://domoseguridad.com.ar/alarmacomodato/",
     TAG_MOCK: "",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "Domo.png",
   },
   {
     ID: "46",
@@ -954,7 +954,7 @@ const galeryProyects = [
     LINK: "https://domoseguridad.com.ar/",
     TAG_MOCK: "",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "Domo.png",
   },
   {
     ID: "47",
@@ -975,7 +975,7 @@ const galeryProyects = [
     LINK: "http://kendallschool.com.ar/",
     TAG_MOCK: "",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "kendall.png",
   },
   {
     ID: "48",
@@ -996,7 +996,7 @@ const galeryProyects = [
     LINK: "",
     TAG_MOCK: "",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "Suplementos.png",
   },
   {
     ID: "49",
@@ -1017,12 +1017,12 @@ const galeryProyects = [
     LINK: "http://toogood.com.ar/",
     TAG_MOCK: "",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "too_good.png",
   },
   {
     ID: "50",
     PROYECTO: "Everlight",
-    TITULO: "Fábrica de mochilas y bolsos ",
+    TITULO: "Fábrica de mochilas y bolsos",
     SOBRE: "",
     RURO: "",
     CLIENTE: "Freiberg SA",
@@ -1038,12 +1038,12 @@ const galeryProyects = [
     LINK: "http://everlight.com.ar/",
     TAG_MOCK: "",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "everlight.png",
   },
   {
     ID: "",
     PROYECTO: "Everlight",
-    TITULO: "Fábrica de mochilas y bolsos ",
+    TITULO: "Fábrica de mochilas y bolsos",
     SOBRE: "",
     RURO: "",
     CLIENTE: "Freiberg SA",
@@ -1059,7 +1059,7 @@ const galeryProyects = [
     LINK: "http://everlight.com.ar/representar.html",
     TAG_MOCK: "#Lead",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "everlight.png",
   },
   {
     ID: "51",
@@ -1080,7 +1080,7 @@ const galeryProyects = [
     LINK: "https://www.freiberg.com.ar/",
     TAG_MOCK: "",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "Freiberg.png",
   },
   {
     ID: "52",
@@ -1101,7 +1101,7 @@ const galeryProyects = [
     LINK: "",
     TAG_MOCK: "",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "congreso_psico.png",
   },
   {
     ID: "53",
@@ -1122,7 +1122,7 @@ const galeryProyects = [
     LINK: "https://chimpancedigital.com.ar/nimbo/",
     TAG_MOCK: "",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "Nimbo.png",
   },
   {
     ID: "54",
@@ -1143,7 +1143,7 @@ const galeryProyects = [
     LINK: "https://merced.org.ar/",
     TAG_MOCK: "",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "orden_de_la_merced.png",
   },
   {
     ID: "55",
@@ -1164,7 +1164,7 @@ const galeryProyects = [
     LINK: "",
     TAG_MOCK: "",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "",
   },
   {
     ID: "56",
@@ -1185,7 +1185,7 @@ const galeryProyects = [
     LINK: "",
     TAG_MOCK: "",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "Coralt.png",
   },
   {
     ID: "57",
@@ -1206,7 +1206,7 @@ const galeryProyects = [
     LINK: "http://www.metalobra.com/inicio/",
     TAG_MOCK: "#Wordpress",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "metaobra.png",
   },
   {
     ID: "58",
@@ -1227,7 +1227,7 @@ const galeryProyects = [
     LINK: "http://panaderiasperikos.com.ar/",
     TAG_MOCK: "",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "Perikos.png",
   },
   {
     ID: "59",
@@ -1248,7 +1248,7 @@ const galeryProyects = [
     LINK: "https://eadb.org.ar",
     TAG_MOCK: "",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "Exploradores.png",
   },
   {
     ID: "60",
@@ -1269,7 +1269,7 @@ const galeryProyects = [
     LINK: "http://chimpance.digital/admingc/",
     TAG_MOCK: "",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "Administracion.png",
   },
   {
     ID: "61",
@@ -1290,7 +1290,7 @@ const galeryProyects = [
     LINK: "",
     TAG_MOCK: "",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "Escarabajo_kids.png",
   },
   {
     ID: "62",
@@ -1311,7 +1311,7 @@ const galeryProyects = [
     LINK: "https://cordobaresistencias.com.ar/",
     TAG_MOCK: "",
     PAIS: "Estados Unidos",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "",
   },
   {
     ID: "63",
@@ -1332,7 +1332,7 @@ const galeryProyects = [
     LINK: "https://cedacderma.com.ar/",
     TAG_MOCK: "",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "CEDAC.png",
   },
   {
     ID: "64",
@@ -1353,7 +1353,7 @@ const galeryProyects = [
     LINK: "",
     TAG_MOCK: "",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "rural.png",
   },
   {
     ID: "65",
@@ -1374,7 +1374,7 @@ const galeryProyects = [
     LINK: "",
     TAG_MOCK: "",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "Claro.png",
   },
   {
     ID: "66",
@@ -1395,7 +1395,7 @@ const galeryProyects = [
     LINK: "",
     TAG_MOCK: "",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "",
   },
   {
     ID: "67",
@@ -1416,7 +1416,7 @@ const galeryProyects = [
     LINK: "https://cinergiaestudiocreativo.com/",
     TAG_MOCK: "",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "Cinergia.png",
   },
   {
     ID: "68",
@@ -1437,7 +1437,7 @@ const galeryProyects = [
     LINK: "https://decoloresdc.com/",
     TAG_MOCK: "",
     PAIS: "Estados Unidos",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "De_colores.png",
   },
   {
     ID: "69",
@@ -1458,7 +1458,7 @@ const galeryProyects = [
     LINK: "https://singulares.com/",
     TAG_MOCK: "",
     PAIS: "Chile",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "Singulares.png",
   },
   {
     ID: "70",
@@ -1479,7 +1479,7 @@ const galeryProyects = [
     LINK: "",
     TAG_MOCK: "",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "The_weed_school.png",
   },
   {
     ID: "71",
@@ -1500,7 +1500,7 @@ const galeryProyects = [
     LINK: "https://orishinal.com/",
     TAG_MOCK: "",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "Orishinal.png",
   },
   {
     ID: "73",
@@ -1521,7 +1521,7 @@ const galeryProyects = [
     LINK: "https://arvancapacitaciones.com/",
     TAG_MOCK: "",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "Arvan.png",
   },
   {
     ID: "74",
@@ -1542,7 +1542,7 @@ const galeryProyects = [
     LINK: "https://app.bhiviajes.com.ar/home/dashboard",
     TAG_MOCK: "",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "Bhi_viajes.png",
   },
   {
     ID: "75",
@@ -1563,7 +1563,7 @@ const galeryProyects = [
     LINK: "",
     TAG_MOCK: "",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "celina_espada.png",
   },
   {
     ID: "76",
@@ -1584,7 +1584,7 @@ const galeryProyects = [
     LINK: "https://grupoandesat.com/satelite-andesat1/",
     TAG_MOCK: "",
     PAIS: "Perú",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "Andesat.png",
   },
   {
     ID: "78",
@@ -1605,7 +1605,7 @@ const galeryProyects = [
     LINK: "http://xn--broneff-n2a.ch/",
     TAG_MOCK: "",
     PAIS: "Suiza",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "Bruno_neff.png",
   },
   {
     ID: "79",
@@ -1626,7 +1626,7 @@ const galeryProyects = [
     LINK: "",
     TAG_MOCK: "",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "",
   },
   {
     ID: "80",
@@ -1647,7 +1647,7 @@ const galeryProyects = [
     LINK: "",
     TAG_MOCK: "",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "",
   },
   {
     ID: "81",
@@ -1668,7 +1668,7 @@ const galeryProyects = [
     LINK: "",
     TAG_MOCK: "",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "up_lisboa.png",
   },
   {
     ID: "82",
@@ -1689,7 +1689,7 @@ const galeryProyects = [
     LINK: "http://chimpance.digital/torrefluss/",
     TAG_MOCK: "",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "Fluss.png",
   },
   {
     ID: "83",
@@ -1710,7 +1710,7 @@ const galeryProyects = [
     LINK: "https://vitabiosa.com.ar/",
     TAG_MOCK: "",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "vitabiosa.png",
   },
   {
     ID: "84",
@@ -1731,7 +1731,7 @@ const galeryProyects = [
     LINK: "",
     TAG_MOCK: "",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "Costa_esmeralda.png",
   },
   {
     ID: "85",
@@ -1752,7 +1752,7 @@ const galeryProyects = [
     LINK: "https://copa.org.ar/",
     TAG_MOCK: "",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "Copa.png",
   },
   {
     ID: "86",
@@ -1773,7 +1773,7 @@ const galeryProyects = [
     LINK: "",
     TAG_MOCK: "",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "cuentos_chiles.png",
   },
   {
     ID: "87",
@@ -1794,7 +1794,7 @@ const galeryProyects = [
     LINK: "https://www.ivanofarrell.com.ar/",
     TAG_MOCK: "",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "O_farrel.png",
   },
   {
     ID: "88",
@@ -1815,7 +1815,7 @@ const galeryProyects = [
     LINK: "https://cordobaresistencias.com.ar/",
     TAG_MOCK: "",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "",
   },
   {
     ID: "89",
@@ -1836,7 +1836,7 @@ const galeryProyects = [
     LINK: "",
     TAG_MOCK: "",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "",
   },
   {
     ID: "90",
@@ -1857,7 +1857,7 @@ const galeryProyects = [
     LINK: "https://popatik.com/",
     TAG_MOCK: "",
     PAIS: "Pasí vazco",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "",
   },
   {
     ID: "91",
@@ -1878,7 +1878,7 @@ const galeryProyects = [
     LINK: "",
     TAG_MOCK: "",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "",
   },
   {
     ID: "92",
@@ -1899,7 +1899,7 @@ const galeryProyects = [
     LINK: "",
     TAG_MOCK: "",
     PAIS: "",
-    IMG_SRC: "images/portfolio/",
+    IMG_SRC: "",
   },
 ];
 

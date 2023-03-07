@@ -1,11 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import AOS from "aos";
+import Shuffle from "shufflejs";
 import { Container, Row } from "react-bootstrap";
 import { sortedJson, allCategories } from "../../../utils/galery";
-import Shuffle from "shufflejs";
-import jqueryMasonryGalery from "./galeryScript";
-import "./galeryDesktop.css";
 import FilterDropdown from "./filterDropdown";
+import "./galeryDesktop.css";
 
 function Galery({ sectionTitle }) {
   const [proyects, setProyects] = useState([]);
@@ -53,13 +52,14 @@ function Galery({ sectionTitle }) {
         <h5 class="fc-lightBlue mb-1 ff-circularBold">Nuestros Proyectos</h5>
       </div>
       <Row className="">
+        <div className="col-12">
+
+        </div>
         <div className="col-2">
-          {
             <FilterDropdown
               categories={categories}
               handleChange={handleChange}
             />
-          }
         </div>
         <div className="col-10">
           <div className="row shuffle-wrapper">

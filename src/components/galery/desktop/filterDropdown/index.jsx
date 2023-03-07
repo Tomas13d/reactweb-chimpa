@@ -11,18 +11,13 @@ function FilterDropdown({ handleChange, categories }) {
   }, [categories]);
 
   return (
-    <div className="filter-cont col-2">
-      <div onClick={() => setShow(true)}>
-        <i class="bi bi-sliders filter-icon"></i>
-      </div>
-
+    <div className="filter-cont sticky-column">
+        <i class="bi bi-sliders filter-icon" onClick={() => setShow(true)}></i>
       <div className={`dropdown-custom ${show ? "show" : "hidden"}`}>
         <div className="filter-drop-header d-flex justify-content-between align-items-center">
           <h6 className="filter-header">Filtros</h6>
-          <i
-            class="bi bi-chevron-left close-icon"
-            onClick={() => setShow(false)}
-          ></i>
+            <i class="bi bi-chevron-left close-icon" onClick={() => setShow(false)}></i>
+          
         </div>
         <hr className="line-separator" />
 

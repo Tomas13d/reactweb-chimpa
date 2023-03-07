@@ -1,6 +1,7 @@
 .filter-cont {
   position: relative;
   z-index: 20;
+  margin-top: 5px;
 }
 
 .filter-icon {
@@ -31,7 +32,7 @@
 }
 
 .filter-drop-header {
-  margin-top: 8.5px;
+  margin-top: 12px;
   margin-left: 45px;
 }
 
@@ -41,7 +42,7 @@
 }
 
 .line-separator {
-  margin: 0;
+  margin: 7px 0px;
   border: 1px solid #ffffff;
 }
 
@@ -69,4 +70,10 @@
   background-color: #ffffff;
   border-radius: 0.15em !important;
   border: none !important ;
+}
+
+.sticky-column{
+  position: sticky !important;
+  top: 120px !important;
+  z-index: 5;
 }

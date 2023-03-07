@@ -1,0 +1,27 @@
+.filter-cont{
+    position: relative;
+    z-index: 20;
+}
+
+.filter-icon{
+    font-size: 24px;
+    background-color: var(--lightBlue);
+    padding: 5px 10px;
+}
+.dropdown-custom{
+    top: -5px;
+    left: 0;
+    position: absolute;
+    z-index: -1;
+    width: 300px;
+    height: 600px;
+    background-color: var(--lightBlue);
+    border-radius: 2px;
+    opacity: 0;
+    transition: all .4s ease-in
+}
+
+  .show {
+    opacity: 1;
+  
+  }

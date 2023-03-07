@@ -1945,7 +1945,6 @@ export const sortedJson = trasnformGaleryJson(galeryProyects);
 
  categories.splice(categories.indexOf("Otros"),1)
  categories.push("Otros")
- categories.unshift("all")
 
 export const allCategories = categories
 

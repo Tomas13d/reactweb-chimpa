@@ -5,46 +5,9 @@
   width: 65px;
   border: 2px solid var(--yellow);
 }
-.portfolio {
-  padding-bottom: 100px;
-  --bs-gutter-x: 0 !important;
-}
-.portfolio .btn:focus,
-.portfolio .btn:hover,
-.portfolio .btn.focus.active {
-  box-shadow: none !important;
-  outline: 0 !important;
-}
-.portfolio .btn-group .active-chip {
-  background-color: #36a9e1;
-}
 
-.portfolio .btn-group .btn {
-  margin-right: 15px;
-  border-radius: 40px !important;
-  border: 1px solid #36a9e1;
-  height: 35px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  min-width: 135px;
-  font-weight: 200;
-  color: #fff;
-}
-.portfolio .btn-group .btn:hover {
-  background-color: #36a9e1;
-  cursor: url(../../../../public/images/cursor-hover.svg), pointer;
-}
-.radio-hidden {
-  display: none;
-}
 
-.portfolio .btn-group:not(:first-child) > .btn,
-.portfolio .btn-group > .btn:not(:first-child) {
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 0px;
-}
+
 
 .inner-box {
   position: relative;
@@ -146,7 +109,6 @@
 .portfolio-image {
   width: 60px;
   height: 60px;
-  display: inline-block;
   text-align: center;
   background: #d1d1d1;
   color: #0a0a0a;

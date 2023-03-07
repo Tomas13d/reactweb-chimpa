@@ -1,35 +1,46 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import AOS from "aos";
 import { Container, Row } from "react-bootstrap";
 import { sortedJson, allCategories } from "../../../utils/galery";
+import Shuffle from "shufflejs";
 import jqueryMasonryGalery from "./galeryScript";
 import "./galeryDesktop.css";
 
 function Galery({ sectionTitle }) {
   const [proyects, setProyects] = useState([]);
   const [categories, setCategories] = useState([""]);
-  const [flag, setFlag] = useState(false);
-  const [activeCategory, setActiveCategory] = useState();
+  const [activeFilter, setActiveFilters] = useState([]);
+  const [shuffleRef, setShuffleRef] = useState();
 
   useEffect(() => {
     AOS.init({ once: true });
-    jqueryMasonryGalery();
-  }, [flag]);
+    const shuffle = new Shuffle(document.querySelector(".shuffle-wrapper"), {
+      itemSelector: ".shuffle-item",
+      buffer: 1,
+    });
+    setShuffleRef(shuffle);
+  }, []);
+
+  useEffect(() => {
+    if (shuffleRef) {
+      shuffleRef.resetItems();
+    }
+  }, [proyects]);
 
   useEffect(() => {
     if (sortedJson) {
       setCategories(allCategories);
       setProyects(sortedJson);
-      setFlag(flag ? false : true);
     }
   }, [sortedJson]);
 
   const handleChange = (e) => {
-    setActiveCategory(e.target.value);
-  };
-
-  const getRandomInt = (min, max) => {
-    return Math.floor(Math.random() * (max - min)) + min;
+    const input = e.currentTarget;
+    const filters = activeFilter;
+    input.checked
+      ? filters.push(input.value)
+      : filters.splice(filters.indexOf(input.value), 1);
+    shuffleRef.filter(filters);
   };
 
   return (
@@ -39,36 +50,23 @@ function Galery({ sectionTitle }) {
         <h5 class="mb-1 ff-circularBold">{sectionTitle}</h5>
         <h5 class="fc-lightBlue mb-1 ff-circularBold">Nuestros Proyectos</h5>
       </div>
-      <Container className="portfolio">
-        <Container>
-          <Row className="mb-3">
-            <div className="col-12">
-              <div
-                className="btn-group btn-group-toggle "
-                data-toggle="buttons"
-              >
-                {categories[0] &&
-                  categories.map((category, i) => (
-                    <label
-                      className={`btn ${
-                        activeCategory === category ? "active-chip" : ""
-                      }`}
-                      key={i + new Date().getTime}
-                    >
-                      <input
-                        type="radio"
-                        name="shuffle-filter"
-                        value={category}
-                        onChange={handleChange}
-                        className="radio-hidden"
-                      />
-                      {category === "all" ? "Todos" : category}
-                    </label>
-                  ))}
-              </div>
-            </div>
-          </Row>
-          <div className="row shuffle-wrapper portfolio-gallery">
+      <Row className="">
+        <div className="col-2">
+          {categories[0] &&
+            categories.map((category, i) => (
+              <label className={`btn`} key={i + new Date().getTime}>
+                <input
+                  type="checkbox"
+                  name="shuffle-filter"
+                  value={category}
+                  onChange={handleChange}
+                />
+                {category === "all" ? "Todos" : category}
+              </label>
+            ))}
+        </div>
+        <div className="col-10">
+          <div className="row shuffle-wrapper">
             {proyects[0] &&
               proyects.map((proyect, i) => (
                 <div
@@ -107,10 +105,13 @@ function Galery({ sectionTitle }) {
                 </div>
               ))}
           </div>
-        </Container>
-      </Container>
+        </div>
+      </Row>
     </Container>
   );
 }
 
 export default Galery;
+
+/*
+ */

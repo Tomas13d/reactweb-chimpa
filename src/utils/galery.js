@@ -1903,10 +1903,14 @@ const galeryProyects = [
   },
 ];
 
-const categories = [];
-const getCategories = (categoryArray) => {
+const categories = {};
+const getCategories = (categoryArray, categoryName) => {
     categoryArray.forEach(category => {
-        if(!categories.includes(category)) categories.push(category)
+        if(categories[categoryName]){
+          if(!categories[categoryName].includes(category)) categories[categoryName].push(category)
+        } else {
+          categories[categoryName] = [category]
+        }
     })
 };
 
@@ -1917,7 +1921,7 @@ const trasnformGaleryJson = (galeryJson) => {
     proyect.PROYECTO = proyect.PROYECTO.trim()
     proyect.TAG = proyect.TAG.split(" ");
     proyect.TAG_MOCK = proyect.TAG_MOCK.split(" ");
-    getCategories(proyect.CATEGORIA);
+    getCategories(proyect.CATEGORIA, "Tipos de Web");
 
     switch (proyect.PRIORIDAD) {
       case "Alta":
@@ -1943,8 +1947,7 @@ const trasnformGaleryJson = (galeryJson) => {
 
 export const sortedJson = trasnformGaleryJson(galeryProyects);
 
- categories.splice(categories.indexOf("Otros"),1)
- categories.push("Otros")
+
 
 export const allCategories = categories
 

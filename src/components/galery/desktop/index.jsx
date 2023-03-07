@@ -5,6 +5,7 @@ import { sortedJson, allCategories } from "../../../utils/galery";
 import Shuffle from "shufflejs";
 import jqueryMasonryGalery from "./galeryScript";
 import "./galeryDesktop.css";
+import FilterDropdown from "./filterDropdown";
 
 function Galery({ sectionTitle }) {
   const [proyects, setProyects] = useState([]);
@@ -36,6 +37,7 @@ function Galery({ sectionTitle }) {
 
   const handleChange = (e) => {
     const input = e.currentTarget;
+    console.log("input ->", input);
     const filters = activeFilter;
     input.checked
       ? filters.push(input.value)
@@ -52,18 +54,12 @@ function Galery({ sectionTitle }) {
       </div>
       <Row className="">
         <div className="col-2">
-          {categories[0] &&
-            categories.map((category, i) => (
-              <label className={`btn`} key={i + new Date().getTime}>
-                <input
-                  type="checkbox"
-                  name="shuffle-filter"
-                  value={category}
-                  onChange={handleChange}
-                />
-                {category === "all" ? "Todos" : category}
-              </label>
-            ))}
+          {
+            <FilterDropdown
+              categories={categories}
+              handleChange={handleChange}
+            />
+          }
         </div>
         <div className="col-10">
           <div className="row shuffle-wrapper">

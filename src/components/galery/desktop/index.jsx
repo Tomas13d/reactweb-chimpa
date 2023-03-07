@@ -1,15 +1,17 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import AOS from "aos";
 import Shuffle from "shufflejs";
 import { Container, Row } from "react-bootstrap";
 import { sortedJson, allCategories } from "../../../utils/galery";
 import FilterDropdown from "./filterDropdown";
 import "./galeryDesktop.css";
+import { sortByDate, sortByPriority } from "./sortFunctions";
 
 function Galery({ sectionTitle }) {
   const [proyects, setProyects] = useState([]);
   const [categories, setCategories] = useState([""]);
   const [activeFilter, setActiveFilters] = useState([]);
+  const [show, setShow] = useState(false);
   const [shuffleRef, setShuffleRef] = useState();
 
   useEffect(() => {
@@ -22,26 +24,57 @@ function Galery({ sectionTitle }) {
   }, []);
 
   useEffect(() => {
-    if (shuffleRef) {
-      shuffleRef.resetItems();
-    }
-  }, [proyects]);
-
-  useEffect(() => {
     if (sortedJson) {
       setCategories(allCategories);
       setProyects(sortedJson);
     }
   }, [sortedJson]);
 
+  useEffect(() => {
+    if (shuffleRef) {
+      shuffleRef.resetItems();
+      shuffleRef.sort({
+        by: sortByPriority,
+      });
+    }
+  }, [proyects]);
+
   const handleChange = (e) => {
     const input = e.currentTarget;
-    console.log("input ->", input);
     const filters = activeFilter;
     input.checked
       ? filters.push(input.value)
       : filters.splice(filters.indexOf(input.value), 1);
     shuffleRef.filter(filters);
+  };
+
+  const handleSort = (e) => {
+    let value = e.target.value;
+    let options;
+    switch (value) {
+      case "newer":
+        options = {
+          reverse: true,
+          by: sortByDate,
+        };
+        break;
+      case "older":
+        options = {
+          reverse: false,
+          by: sortByDate,
+        };
+        break;
+      case "relevant":
+        options = {
+          by: sortByPriority,
+        };
+        break;
+
+      default:
+        options = {};
+    }
+
+    shuffleRef.sort(options);
   };
 
   return (
@@ -51,15 +84,50 @@ function Galery({ sectionTitle }) {
         <h5 class="mb-1 ff-circularBold">{sectionTitle}</h5>
         <h5 class="fc-lightBlue mb-1 ff-circularBold">Nuestros Proyectos</h5>
       </div>
-      <Row className="">
-        <div className="col-12">
-
+      <Row className="galery">
+        <div className="col-12 d-flex justify-content-end">
+          <div class="dropdown">
+            <button
+              class="dropdown-toggle order-by"
+              type="button"
+              id="dropdownMenuButton"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+              onClick={() => setShow(!show)}
+            >
+              Ordenar Por
+            </button>
+            <div
+              class={`dropdown-menu menu-options ${show ? "show" : ""}`}
+              aria-labelledby="dropdownMenuButton"
+            >
+              <option
+                class="dropdown-item custon-drop-item"
+                value="relevant"
+                onClick={handleSort}
+              >
+                Mas Relevante
+              </option>
+              <option
+                class="dropdown-item custon-drop-item"
+                value="newer"
+                onClick={handleSort}
+              >
+                Mas Reciente
+              </option>
+              <option
+                class="dropdown-item custon-drop-item"
+                value="older"
+                onClick={handleSort}
+              >
+                Mas Antiguo
+              </option>
+            </div>
+          </div>
         </div>
         <div className="col-2">
-            <FilterDropdown
-              categories={categories}
-              handleChange={handleChange}
-            />
+          <FilterDropdown categories={categories} handleChange={handleChange} />
         </div>
         <div className="col-10">
           <div className="row shuffle-wrapper">
@@ -68,6 +136,8 @@ function Galery({ sectionTitle }) {
                 <div
                   key={i + new Date().getTime}
                   className="col-lg-4 col-6 mb-4 shuffle-item"
+                  data-priority={proyect.PRIORIDAD}
+                  data-created={proyect.AÑO}
                   data-groups={JSON.stringify(proyect.CATEGORIA)}
                 >
                   <div className="position-relative inner-box">

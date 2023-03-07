@@ -1915,33 +1915,16 @@ const getCategories = (categoryArray, categoryName) => {
 };
 
 const trasnformGaleryJson = (galeryJson) => {
-  const order = [[], [], [], [], []];
   galeryJson.forEach((proyect) => {
     proyect.CATEGORIA = proyect.CATEGORIA.split(" ");
     proyect.PROYECTO = proyect.PROYECTO.trim()
     proyect.TAG = proyect.TAG.split(" ");
     proyect.TAG_MOCK = proyect.TAG_MOCK.split(" ");
+    /* aca puedo ir agregando las categorias que necesito y sus titulos */
     getCategories(proyect.CATEGORIA, "Tipos de Web");
 
-    switch (proyect.PRIORIDAD) {
-      case "Alta":
-        order[0].push(proyect);
-        break;
-      case "Media":
-        order[1].push(proyect);
-        break;
-      case "Media - Baja":
-        order[2].push(proyect);
-        break;
-      case "Baja":
-        order[3].push(proyect);
-        break;
-      default:
-        order[4].push(proyect);
-    }
   });
-  let sorted = order[0].concat(order[1], order[2], order[3], order[4]);
-  return sorted;
+  return galeryJson;
 };
 
 

@@ -35,7 +35,7 @@ function Galery({ sectionTitle }) {
       shuffleRef.resetItems();
       shuffleRef.sort({
         by: sortByPriority,
-      });
+      }); 
     }
   }, [proyects]);
 

@@ -140,4 +140,7 @@ strong {
 .fc-lightBlue {
   color: var(--lightBlue);
 }
+.fc-lightBlue-01 {
+  color: var(--lightBlue-01);
+}
 

@@ -2,8 +2,8 @@
   margin-top: 40px;
 }
 .yellow-separator {
-  width: 65px;
-  border: 2px solid var(--yellow);
+  width: 20%;
+  border: 1px solid var(--yellow);
 }
 
 .galery {

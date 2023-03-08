@@ -9,11 +9,11 @@ function App() {
     <>
       <NavbarApp />
       <Header
-        deskTopText="Hacemos monerías, pero no tiramos frutas"
+        deskTopText="Construimos tu negocio en la web"
         mobileText="Hacemos monerías, pero no tiramos frutas"
         headerClass="proyectos"
       />
-      <Galery sectionTitle={"Hacemos monerías, pero no tiramos frutas"} /> 
+      <Galery firtsTitle={"Hacemos monerías, pero no tiramos frutas"} secondTitle={"Más de 80 proyectos web."}/> 
     </>
   );
 }

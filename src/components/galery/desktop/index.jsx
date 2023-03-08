@@ -7,7 +7,7 @@ import FilterDropdown from "./filterDropdown";
 import "./galeryDesktop.css";
 import { sortByDate, sortByPriority } from "./sortFunctions";
 
-function Galery({ sectionTitle }) {
+function Galery({ firtsTitle, secondTitle }) {
   const [proyects, setProyects] = useState([]);
   const [segmentedProjects, setSegmentedProjects] = useState([])
   const [showMore, setShowMore] = useState(1)
@@ -93,8 +93,8 @@ function Galery({ sectionTitle }) {
     <Container className="galery-section">
       <div className="mb-5">
         <div className="yellow-separator mb-4"></div>
-        <h5 className="mb-1 ff-circularBold">{sectionTitle}</h5>
-        <h5 className="fc-lightBlue mb-1 ff-circularBold">Nuestros Proyectos</h5>
+        <h4 className="mb-1 ff-circularBold">{firtsTitle}</h4>
+        <h4 className="fc-lightBlue mb-1 ff-circularBold">{secondTitle}</h4>
       </div>
       <Row className="galery">
         <div className="col-12 d-flex justify-content-end">

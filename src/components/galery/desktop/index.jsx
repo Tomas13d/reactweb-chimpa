@@ -15,6 +15,7 @@ function Galery({ sectionTitle }) {
   const [activeFilter, setActiveFilters] = useState([]);
   const [show, setShow] = useState(false);
   const [shuffleRef, setShuffleRef] = useState();
+  const [lastImage, setLastImage] = useState(false)
 
   useEffect(() => {
     AOS.init({ once: true });
@@ -29,7 +30,7 @@ function Galery({ sectionTitle }) {
       if(shuffleRef){
         shuffleRef.layout();
       }
-  },[showMore])
+  },[showMore, activeFilter])
  
   useEffect(() => {
     if (sortedJson) {
@@ -41,19 +42,21 @@ function Galery({ sectionTitle }) {
   useEffect(() => {
     if (shuffleRef) {
       shuffleRef.resetItems();
-      shuffleRef.sort({
-        by: sortByPriority,
-      }); 
     }
   }, [proyects]);
 
   const handleChange = (e) => {
     const input = e.currentTarget;
     const filters = activeFilter;
-    input.checked
-      ? filters.push(input.value)
-      : filters.splice(filters.indexOf(input.value), 1);
-    shuffleRef.filter(filters);
+    if(input.checked){
+      filters.push(input.value)
+      setShowMore(999)
+    } else {
+      filters.splice(filters.indexOf(input.value), 1);
+      filters.length !== 0 ? setShowMore(999) : setShowMore(1)
+    }
+      setActiveFilters(filters)
+     shuffleRef.filter(filters);
   };
 
   const handleSort = (e) => {
@@ -82,6 +85,7 @@ function Galery({ sectionTitle }) {
         options = {};
     }
     shuffleRef.sort(options);
+    setShowMore(1)
   };
 
 
@@ -89,14 +93,14 @@ function Galery({ sectionTitle }) {
     <Container className="galery-section">
       <div className="mb-5">
         <div className="yellow-separator mb-4"></div>
-        <h5 class="mb-1 ff-circularBold">{sectionTitle}</h5>
-        <h5 class="fc-lightBlue mb-1 ff-circularBold">Nuestros Proyectos</h5>
+        <h5 className="mb-1 ff-circularBold">{sectionTitle}</h5>
+        <h5 className="fc-lightBlue mb-1 ff-circularBold">Nuestros Proyectos</h5>
       </div>
       <Row className="galery">
         <div className="col-12 d-flex justify-content-end">
-          <div class="dropdown">
+          <div className="dropdown">
             <button
-              class="dropdown-toggle order-by"
+              className="dropdown-toggle order-by"
               type="button"
               id="dropdownMenuButton"
               data-toggle="dropdown"
@@ -107,29 +111,29 @@ function Galery({ sectionTitle }) {
               Ordenar Por
             </button>
             <div
-              class={`dropdown-menu menu-options ${show ? "show" : ""}`}
+              className={`dropdown-menu menu-options ${show ? "show" : ""}`}
               aria-labelledby="dropdownMenuButton"
             >
               <option
-                class="dropdown-item custon-drop-item"
+                className="dropdown-item custon-drop-item"
                 value="relevant"
                 onClick={handleSort}
               >
-                Mas Relevante
+                Más Relevante
               </option>
               <option
-                class="dropdown-item custon-drop-item"
+                className="dropdown-item custon-drop-item"
                 value="newer"
                 onClick={handleSort}
               >
-                Mas Reciente
+                Más Reciente
               </option>
               <option
-                class="dropdown-item custon-drop-item"
+                className="dropdown-item custon-drop-item"
                 value="older"
                 onClick={handleSort}
               >
-                Mas Antiguo
+                Más Antiguo
               </option>
             </div>
           </div>
@@ -143,7 +147,7 @@ function Galery({ sectionTitle }) {
               proyects.map((proyect, i) => (
                 <div
                   key={i + new Date().getTime}
-                  className={`shuffle-item ${showMore*20 >= i ? "col-lg-4 col-6 mb-4": "no-load"}`}
+                  className={`shuffle-item ${activeFilter.length > 0 ? "col-lg-4 col-6 mb-4" : showMore*20 >= i ? "col-lg-4 col-6 mb-4": "no-load"}`}
                   data-priority={proyect.PRIORIDAD}
                   data-created={proyect.AÑO}
                   data-groups={JSON.stringify(proyect.CATEGORIA)}
@@ -180,7 +184,12 @@ function Galery({ sectionTitle }) {
               ))}
           </div>
           <div className="col-12 d-flex justify-content-center">
-            <button className="order-by" onClick={()=> setShowMore(showMore+1)}>Ver Mas</button>
+            {activeFilter.length > 0 ? (
+              <></>
+            ) : (
+              <button className="see-more" onClick={()=> setShowMore(showMore+1)}>Ver Más</button>
+            )}
+            
           </div>
         </div>
       </Row>

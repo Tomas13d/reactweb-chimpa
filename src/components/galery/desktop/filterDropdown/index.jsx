@@ -12,18 +12,18 @@ function FilterDropdown({ handleChange, categories }) {
 
   return (
     <div className="filter-cont sticky-column">
-      <i class={`bi bi-sliders filter-icon ${show ? "no-show" : ""}`} onClick={() => setShow(true)}></i>
+      <i className={`bi bi-sliders filter-icon ${show ? "no-show" : ""}`} onClick={() => setShow(true)}></i>
       <div className={`dropdown-custom ${show ? "show" : "hidden"}`}>
         <div className="filter-drop-header d-flex justify-content-between align-items-baseline">
           <div className="icon-and-header">
             <i
-              class="bi bi-sliders inside-icon"
+              className="bi bi-sliders inside-icon"
               onClick={() => setShow(false)}
             ></i>
             <h6 className="filter-header">Filtros</h6>
           </div>
           <i
-            class="bi bi-chevron-left close-icon"
+            className="bi bi-chevron-left close-icon"
             onClick={() => setShow(false)}
           ></i>
         </div>
@@ -33,7 +33,7 @@ function FilterDropdown({ handleChange, categories }) {
           <h6 className="filter-by">Filtrar Por</h6>
           {Object.keys(filters).map((filterHeader, index) => (
             <>
-              <h6 className="ff-circularBold category-header">
+              <h6 className="ff-circularBold category-header" >
                 {filterHeader}
               </h6>
               <Form className="inputs-cont">

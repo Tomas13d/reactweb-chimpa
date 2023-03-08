@@ -96,6 +96,10 @@
   border: none !important ;
 }
 
+.custom-checkbox:hover {
+  cursor: url(../../../../../public/images/cursor.svg), pointer;
+}
+
 .sticky-column {
   position: sticky !important;
   top: 120px !important;

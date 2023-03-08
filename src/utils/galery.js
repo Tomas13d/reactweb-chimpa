@@ -1922,6 +1922,8 @@ const trasnformGaleryJson = (galeryJson) => {
     proyect.TAG_MOCK = proyect.TAG_MOCK.split(" ");
     /* aca puedo ir agregando las categorias que necesito y sus titulos */
     getCategories(proyect.CATEGORIA, "Tipos de Web");
+    getCategories(proyect.CATEGORIA, "Lenguajes");
+    getCategories(proyect.CATEGORIA, "Otros");
 
   });
   return galeryJson;

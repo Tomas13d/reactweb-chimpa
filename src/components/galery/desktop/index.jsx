@@ -9,6 +9,8 @@ import { sortByDate, sortByPriority } from "./sortFunctions";
 
 function Galery({ sectionTitle }) {
   const [proyects, setProyects] = useState([]);
+  const [segmentedProjects, setSegmentedProjects] = useState([])
+  const [showMore, setShowMore] = useState(1)
   const [categories, setCategories] = useState([""]);
   const [activeFilter, setActiveFilters] = useState([]);
   const [show, setShow] = useState(false);
@@ -23,6 +25,12 @@ function Galery({ sectionTitle }) {
     setShuffleRef(shuffle);
   }, []);
 
+  useEffect(()=>{
+      if(shuffleRef){
+        shuffleRef.layout();
+      }
+  },[showMore])
+ 
   useEffect(() => {
     if (sortedJson) {
       setCategories(allCategories);
@@ -73,9 +81,9 @@ function Galery({ sectionTitle }) {
       default:
         options = {};
     }
-
     shuffleRef.sort(options);
   };
+
 
   return (
     <Container className="galery-section">
@@ -135,7 +143,7 @@ function Galery({ sectionTitle }) {
               proyects.map((proyect, i) => (
                 <div
                   key={i + new Date().getTime}
-                  className="col-lg-4 col-6 mb-4 shuffle-item"
+                  className={`shuffle-item ${showMore*20 >= i ? "col-lg-4 col-6 mb-4": "no-load"}`}
                   data-priority={proyect.PRIORIDAD}
                   data-created={proyect.AÑO}
                   data-groups={JSON.stringify(proyect.CATEGORIA)}
@@ -170,6 +178,9 @@ function Galery({ sectionTitle }) {
                   </div>
                 </div>
               ))}
+          </div>
+          <div className="col-12 d-flex justify-content-center">
+            <button className="order-by" onClick={()=> setShowMore(showMore+1)}>Ver Mas</button>
           </div>
         </div>
       </Row>

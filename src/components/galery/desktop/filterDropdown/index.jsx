@@ -12,12 +12,20 @@ function FilterDropdown({ handleChange, categories }) {
 
   return (
     <div className="filter-cont sticky-column">
-        <i class="bi bi-sliders filter-icon" onClick={() => setShow(true)}></i>
+      <i class={`bi bi-sliders filter-icon ${show ? "no-show" : ""}`} onClick={() => setShow(true)}></i>
       <div className={`dropdown-custom ${show ? "show" : "hidden"}`}>
-        <div className="filter-drop-header d-flex justify-content-between align-items-center">
-          <h6 className="filter-header">Filtros</h6>
-            <i class="bi bi-chevron-left close-icon" onClick={() => setShow(false)}></i>
-          
+        <div className="filter-drop-header d-flex justify-content-between align-items-baseline">
+          <div className="icon-and-header">
+            <i
+              class="bi bi-sliders inside-icon"
+              onClick={() => setShow(false)}
+            ></i>
+            <h6 className="filter-header">Filtros</h6>
+          </div>
+          <i
+            class="bi bi-chevron-left close-icon"
+            onClick={() => setShow(false)}
+          ></i>
         </div>
         <hr className="line-separator" />
 

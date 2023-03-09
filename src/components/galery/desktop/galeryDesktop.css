@@ -1,6 +1,7 @@
 .galery-section {
   margin-top: 40px;
 }
+
 .yellow-separator {
   width: 20%;
   border: 1px solid var(--yellow);
@@ -130,7 +131,12 @@
   border: 1px solid var(--lightBlue);
   font-family: var(--circularLight);
 }
-.see-more{
+
+.order-by:hover {
+  cursor: url(../../../../public/images/cursor.svg), pointer;
+}
+
+.see-more {
   margin-bottom: 18px;
   background-color: transparent;
   padding: 5px 10px;
@@ -139,15 +145,20 @@
   border: 1px solid var(--lightBlue);
   font-family: var(--circularLight);
 }
-.menu-options{
+
+.see-more:hover {
+  cursor: url(../../../../public/images/cursor.svg), pointer;
+}
+
+.menu-options {
   background-color: var(--lightBlue) !important;
 }
 
-.custon-drop-item{
-  color: #FFf !important;
+.custon-drop-item {
+  color: #fff !important;
   margin: 2px;
 }
 
-.custon-drop-item:hover{
+.custon-drop-item:hover {
   background-color: var(--lightBlue-01) !important;
 }

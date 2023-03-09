@@ -1,0 +1,63 @@
+.btn-custom {
+    width: 80%;
+    margin-bottom: 18px;
+    background-color: var(--lightBlue);
+    padding: 5px 10px;
+    color: #fff;
+    border-radius: 12px;
+    border: 1px solid var(--lightBlue);
+    font-family: var(--circularBold);
+    font-size: 24px;
+  }
+
+  .mobile-second-title{
+    margin-top: 10px;
+  }
+
+.horizontal-galery-cont{
+    background-color: var(--dblue-color);
+    margin: 40px 0px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    align-items: baseline;
+  }
+
+  .mobile-galery-card{
+    margin-right: 20px;
+    margin-bottom: 20px;
+    min-width: 237px;
+    border-radius: 6px;
+    min-width: 237px;
+    min-height: 350px;
+
+  }
+
+  .mobile-galery-img{
+    width: 100%;
+    height: 350px;
+    min-width: 237px;
+    min-height: 350px;
+    max-width: 237px;
+    max-height: 350px;
+    border-radius: 6px;
+    object-fit: cover;
+    object-position: 95% ;
+  }
+
+  .mobile-galey-card-info{
+    margin-top: 20px;
+  }
+
+  .see-more-card{
+    background-image: url("../../../../public/images//portfolio/see_more.png");
+    min-width: 237px;
+    min-width: 237px;
+    min-height: 350px;
+    align-self: self-start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import AOS from "aos";
 import Shuffle from "shufflejs";
 import { Container, Row } from "react-bootstrap";
@@ -7,15 +7,16 @@ import FilterDropdown from "./filterDropdown";
 import "./galeryDesktop.css";
 import { sortByDate, sortByPriority } from "./sortFunctions";
 
-function Galery({ firtsTitle, secondTitle }) {
+function DesktopGalery({firstTitle, secondTitle}) {
   const [proyects, setProyects] = useState([]);
-  const [segmentedProjects, setSegmentedProjects] = useState([])
   const [showMore, setShowMore] = useState(1)
   const [categories, setCategories] = useState([""]);
   const [activeFilter, setActiveFilters] = useState([]);
   const [show, setShow] = useState(false);
   const [shuffleRef, setShuffleRef] = useState();
-  const [lastImage, setLastImage] = useState(false)
+  const [inLast, setInLast] = useState(false)
+  const lastImage = useRef(null)
+
 
   useEffect(() => {
     AOS.init({ once: true });
@@ -29,6 +30,9 @@ function Galery({ firtsTitle, secondTitle }) {
   useEffect(()=>{
       if(shuffleRef){
         shuffleRef.layout();
+      }
+      if(lastImage.current !== null && !lastImage.current.classList.contains("no-load") && lastImage.current.dataset.position == proyects.length-1){
+        setInLast(true)
       }
   },[showMore, activeFilter])
  
@@ -53,7 +57,12 @@ function Galery({ firtsTitle, secondTitle }) {
       setShowMore(999)
     } else {
       filters.splice(filters.indexOf(input.value), 1);
-      filters.length !== 0 ? setShowMore(999) : setShowMore(1)
+      if(filters.length !== 0){
+        setShowMore(999)
+      } else {
+        setShowMore(1)
+        setInLast(false)
+      }
     }
       setActiveFilters(filters)
      shuffleRef.filter(filters);
@@ -88,12 +97,14 @@ function Galery({ firtsTitle, secondTitle }) {
     setShowMore(1)
   };
 
+ 
+console.log("active filter--->", activeFilter.length);
 
   return (
     <Container className="galery-section">
-      <div className="mb-5">
+        <div className="mb-5">
         <div className="yellow-separator mb-4"></div>
-        <h4 className="mb-1 ff-circularBold">{firtsTitle}</h4>
+        <h4 className="mb-1 ff-circularBold">{firstTitle}</h4>
         <h4 className="fc-lightBlue mb-1 ff-circularBold">{secondTitle}</h4>
       </div>
       <Row className="galery">
@@ -145,8 +156,9 @@ function Galery({ firtsTitle, secondTitle }) {
           <div className="row shuffle-wrapper">
             {proyects[0] &&
               proyects.map((proyect, i) => (
-                <div
+                <div ref={lastImage}
                   key={i + new Date().getTime}
+                  data-position={i}
                   className={`shuffle-item ${activeFilter.length > 0 ? "col-lg-4 col-6 mb-4" : showMore*20 >= i ? "col-lg-4 col-6 mb-4": "no-load"}`}
                   data-priority={proyect.PRIORIDAD}
                   data-created={proyect.AÑO}
@@ -184,10 +196,10 @@ function Galery({ firtsTitle, secondTitle }) {
               ))}
           </div>
           <div className="col-12 d-flex justify-content-center">
-            {activeFilter.length > 0 ? (
+            {activeFilter.length > 0 || inLast ? (
               <></>
-            ) : (
-              <button className="see-more" onClick={()=> setShowMore(showMore+1)}>Ver Más</button>
+              ) : (
+                <button className="see-more" onClick={()=> setShowMore(showMore+1)}>Ver Más</button>
             )}
             
           </div>
@@ -197,7 +209,7 @@ function Galery({ firtsTitle, secondTitle }) {
   );
 }
 
-export default Galery;
+export default DesktopGalery;
 
 /*
  */

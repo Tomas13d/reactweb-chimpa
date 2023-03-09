@@ -1920,6 +1920,7 @@ const trasnformGaleryJson = (galeryJson) => {
     proyect.PROYECTO = proyect.PROYECTO.trim()
     proyect.TAG = proyect.TAG.split(" ");
     proyect.TAG_MOCK = proyect.TAG_MOCK.split(" ");
+    proyect.IMG_SRC = `${proyect.ID}.png`
     /* aca puedo ir agregando las categorias que necesito y sus titulos */
     getCategories(proyect.CATEGORIA, "Tipos de Web");
     getCategories(proyect.CATEGORIA, "Lenguajes");

@@ -46,7 +46,7 @@ function FilterDropdown({ handleChange, categories }) {
                     >
                       <Form.Check
                         type="checkbox"
-                        label={category === "all" ? "Todos" : category}
+                        label={category === "all" ? "Todos" : category.replaceAll("-"," ")}
                         name="shuffle-filter"
                         className="custom-checkbox"
                         onChange={handleChange}

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Container, Row } from "react-bootstrap";
 import { sortedJson, allCategories } from "../../../utils/galery";
 import FilterDropdown from "../desktop/filterDropdown";
@@ -9,15 +9,24 @@ function GaleryMobile({ secondTitle }) {
   const [categories, setCategories] = useState([""]);
   const [segmentedProjects, setSegmentedProjects] = useState([]);
   const [showMore, setShowMore] = useState(5);
-  const [lastImage, setLastImage] = useState(false)
-
+  const [inLast, setInLast] = useState(false);
+  const lastImage = useRef(null);
 
   useEffect(() => {
-    showMore === 5
-      ? setSegmentedProjects(proyects.slice(0, showMore))
-      : setSegmentedProjects(
-          segmentedProjects.concat(proyects.slice(showMore, showMore + 5))
-        );
+    if (showMore === 5) {
+      setSegmentedProjects(proyects.slice(0, showMore));
+    } else {
+      if (showMore >= proyects.length - 1) {
+        setSegmentedProjects(proyects);
+      }
+      setSegmentedProjects(
+        segmentedProjects.concat(proyects.slice(showMore, showMore + 6))
+      );
+    }
+
+    if (lastImage.current !== null && lastImage.current.dataset.position) {
+      setInLast(parseInt(lastImage.current.dataset.position));
+    }
   }, [showMore, proyects]);
 
   useEffect(() => {
@@ -28,6 +37,10 @@ function GaleryMobile({ secondTitle }) {
   }, [sortedJson]);
 
   const handleChange = () => {};
+
+  console.log("more--->", showMore);
+  console.log("proyects.length--->", proyects.length);
+  console.log("position--->", inLast);
 
   return (
     <Container className="galery-section">
@@ -42,7 +55,11 @@ function GaleryMobile({ secondTitle }) {
 
       <div className="horizontal-galery-cont">
         {segmentedProjects.map((proyect, i) => (
-          <div className={`mobile-galery-card`}>
+          <div
+            className={`mobile-galery-card`}
+            ref={lastImage}
+            data-position={i}
+          >
             <img
               src={`images/portfolio/${proyect.IMG_SRC}`}
               alt={proyect.PROYECTO}
@@ -59,12 +76,16 @@ function GaleryMobile({ secondTitle }) {
             </div>
           </div>
         ))}
-        <div
-          className={`see-more-card`}
-          onClick={() => setShowMore(showMore + 5)}
-        >
-          <p>Ver más proyectos</p>
-        </div>
+        {inLast !== proyects.length - 1 ? (
+          <div
+            className={`see-more-card`}
+            onClick={() => setShowMore(showMore + 5)}
+          >
+            <p>Ver más proyectos</p>
+          </div>
+        ) : (
+          <></>
+        )}
       </div>
     </Container>
   );

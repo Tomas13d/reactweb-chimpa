@@ -7,16 +7,15 @@ import FilterDropdown from "./filterDropdown";
 import "./galeryDesktop.css";
 import { sortByDate, sortByPriority } from "./sortFunctions";
 
-function DesktopGalery({firstTitle, secondTitle}) {
+function DesktopGalery({ firstTitle, secondTitle }) {
   const [proyects, setProyects] = useState([]);
-  const [showMore, setShowMore] = useState(1)
+  const [showMore, setShowMore] = useState(1);
   const [categories, setCategories] = useState([""]);
   const [activeFilter, setActiveFilters] = useState([]);
   const [show, setShow] = useState(false);
   const [shuffleRef, setShuffleRef] = useState();
-  const [inLast, setInLast] = useState(false)
-  const lastImage = useRef(null)
-
+  const [inLast, setInLast] = useState(false);
+  const lastImage = useRef(null);
 
   useEffect(() => {
     AOS.init({ once: true });
@@ -27,15 +26,19 @@ function DesktopGalery({firstTitle, secondTitle}) {
     setShuffleRef(shuffle);
   }, []);
 
-  useEffect(()=>{
-      if(shuffleRef){
-        shuffleRef.layout();
-      }
-      if(lastImage.current !== null && !lastImage.current.classList.contains("no-load") && lastImage.current.dataset.position == proyects.length-1){
-        setInLast(true)
-      }
-  },[showMore, activeFilter])
- 
+  useEffect(() => {
+    if (shuffleRef) {
+      shuffleRef.layout();
+    }
+    if (
+      lastImage.current !== null &&
+      !lastImage.current.classList.contains("no-load") &&
+      parseInt(lastImage.current.dataset.position) === proyects.length - 1
+    ) {
+      setInLast(true);
+    }
+  }, [showMore, activeFilter]);
+
   useEffect(() => {
     if (sortedJson) {
       setCategories(allCategories);
@@ -52,20 +55,20 @@ function DesktopGalery({firstTitle, secondTitle}) {
   const handleChange = (e) => {
     const input = e.currentTarget;
     const filters = activeFilter;
-    if(input.checked){
-      filters.push(input.value)
-      setShowMore(999)
+    if (input.checked) {
+      filters.push(input.value);
+      setShowMore(999);
     } else {
       filters.splice(filters.indexOf(input.value), 1);
-      if(filters.length !== 0){
-        setShowMore(999)
+      if (filters.length !== 0) {
+        setShowMore(999);
       } else {
-        setShowMore(1)
-        setInLast(false)
+        setShowMore(1);
+        setInLast(false);
       }
     }
-      setActiveFilters(filters)
-     shuffleRef.filter(filters);
+    setActiveFilters(filters);
+    shuffleRef.filter(filters);
   };
 
   const handleSort = (e) => {
@@ -94,15 +97,14 @@ function DesktopGalery({firstTitle, secondTitle}) {
         options = {};
     }
     shuffleRef.sort(options);
-    setShowMore(1)
+    setShowMore(1);
   };
 
- 
-console.log("active filter--->", activeFilter.length);
+  console.log("active filter--->", activeFilter.length);
 
   return (
     <Container className="galery-section">
-        <div className="mb-5">
+      <div className="mb-5">
         <div className="yellow-separator mb-4"></div>
         <h4 className="mb-1 ff-circularBold">{firstTitle}</h4>
         <h4 className="fc-lightBlue mb-1 ff-circularBold">{secondTitle}</h4>
@@ -156,13 +158,20 @@ console.log("active filter--->", activeFilter.length);
           <div className="row shuffle-wrapper">
             {proyects[0] &&
               proyects.map((proyect, i) => (
-                <div ref={lastImage}
+                <div
+                  ref={lastImage}
                   key={i + new Date().getTime}
                   data-position={i}
-                  className={`shuffle-item ${activeFilter.length > 0 ? "col-lg-4 col-6 mb-4" : showMore*20 >= i ? "col-lg-4 col-6 mb-4": "no-load"}`}
+                  className={`shuffle-item ${
+                    activeFilter.length > 0
+                      ? "col-lg-4 col-6 mb-4"
+                      : showMore * 20 >= i
+                      ? "col-lg-4 col-6 mb-4"
+                      : "no-load"
+                  }`}
                   data-priority={proyect.PRIORIDAD}
                   data-created={proyect.AÑO}
-                  data-groups={JSON.stringify(proyect.CATEGORIA)}
+                  data-groups={JSON.stringify(proyect.CATEGORIA.concat(proyect.LENGUAJE,proyect.CARACTERISTICAS))}
                 >
                   <div className="position-relative inner-box">
                     <div className="image position-relative ">
@@ -198,10 +207,14 @@ console.log("active filter--->", activeFilter.length);
           <div className="col-12 d-flex justify-content-center">
             {activeFilter.length > 0 || inLast ? (
               <></>
-              ) : (
-                <button className="see-more" onClick={()=> setShowMore(showMore+1)}>Ver Más</button>
+            ) : (
+              <button
+                className="see-more"
+                onClick={() => setShowMore(showMore + 1)}
+              >
+                Ver Más
+              </button>
             )}
-            
           </div>
         </div>
       </Row>

@@ -94,6 +94,7 @@
   background-color: #ffffff;
   border-radius: 0.15em !important;
   border: none !important ;
+  text-transform: capitalize;
 }
 
 .custom-checkbox:hover {

@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { Form } from "react-bootstrap";
 import "./filterDropdown.css";
 
-function FilterDropdown({ handleChange, categories }) {
-  const [show, setShow] = useState(false);
+function FilterDropdown({ handleChange, categories, show, setShow }) {
+  
   const [filters, setFilters] = useState({});
 
   useEffect(() => {

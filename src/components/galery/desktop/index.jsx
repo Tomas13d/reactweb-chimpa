@@ -13,6 +13,7 @@ function DesktopGalery({ firstTitle, secondTitle }) {
   const [categories, setCategories] = useState([""]);
   const [activeFilter, setActiveFilters] = useState([]);
   const [show, setShow] = useState(false);
+  const [showFilterNav, setShowFilterNav] = useState(false);
   const [shuffleRef, setShuffleRef] = useState();
   const [inLast, setInLast] = useState(false);
   const lastImage = useRef(null);
@@ -100,8 +101,6 @@ function DesktopGalery({ firstTitle, secondTitle }) {
     setShowMore(1);
   };
 
-  console.log("active filter--->", activeFilter.length);
-
   return (
     <Container className="galery-section">
       <div className="mb-5">
@@ -151,10 +150,10 @@ function DesktopGalery({ firstTitle, secondTitle }) {
             </div>
           </div>
         </div>
-        <div className="col-2">
-          <FilterDropdown categories={categories} handleChange={handleChange} />
+        <div className={`${showFilterNav ? "col-3" : "col-1"}`}>
+          <FilterDropdown categories={categories} handleChange={handleChange} show={showFilterNav} setShow={setShowFilterNav}/>
         </div>
-        <div className="col-10">
+        <div className={`${showFilterNav ? "col-9" : "col-11"}`}>
           <div className="row shuffle-wrapper">
             {proyects[0] &&
               proyects.map((proyect, i) => (
@@ -178,7 +177,7 @@ function DesktopGalery({ firstTitle, secondTitle }) {
                       <img
                         src={`images/portfolio/${proyect.IMG_SRC}`}
                         alt={proyect.PROYECTO}
-                        className="img-fluid w-100 d-block"
+                        className="img-fluid d-block img-portfolio"
                       />
                       <div className="overlay-box">
                         {proyect.LINK === "No funciona" ? (

@@ -2,7 +2,7 @@
 #contact-mobile {
     bottom: 0;
     width: 100%;
-    z-index: 100;
+    z-index: 120;
     position: fixed;
     padding: 20px 0;
     -webkit-backdrop-filter: blur(15px) brightness(80%) contrast(100%);

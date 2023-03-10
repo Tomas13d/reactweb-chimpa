@@ -1,4 +1,5 @@
 #form {
+    margin-top: 60px;
     z-index: 2;
     position: relative;
     background: url(../../../public/images/bg-form.jpg) center center no-repeat;

@@ -20,7 +20,7 @@ function GaleryMobile({ secondTitle }) {
       setProyects(proyectJson);
       setAllProyects(proyectJson);
     }
-    if(allCategories) setCategories(allCategories);
+    if (allCategories) setCategories(allCategories);
   }, []);
 
   useEffect(() => {
@@ -71,15 +71,20 @@ function GaleryMobile({ secondTitle }) {
               src={`images/portfolio/${proyect.IMG_SRC}`}
               alt={proyect.PROYECTO}
               className="mobile-galery-img"
+              loading="lazy"
             />
             <div className="mobile-galey-card-info">
               <h5 className="ff-circularBold fc-lightBlue">
                 {proyect.PROYECTO}
               </h5>
               <p className="ff-circularLight">{proyect.TITULO}</p>
-              <a href={proyect.LINK} className="fc-yellow ff-circularLight">
-                Ver web <i className="bi bi-chevron-right"></i>
-              </a>
+              {proyect.LINK === "No funciona" || proyect.LINK === "" ? (
+                <></>
+              ) : (
+                <a href={proyect.LINK} className="fc-yellow ff-circularLight">
+                  Ver web <i className="bi bi-chevron-right"></i>
+                </a>
+              )}
             </div>
           </div>
         ))}

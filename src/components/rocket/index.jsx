@@ -36,21 +36,21 @@ function Rocket() {
   };
 
   return (
-    <section id="form" class="pb-0 pt-100">
-      <div class="container">
-        <div class="row d-flex justify-content-center">
-          <div class="col-md-10 d-flex flex-column align-items-center align-self-end">
-            <h3 class="text-center mb-5">
+    <section id="form" className="pb-0 pt-100">
+      <div className="container">
+        <div className="row d-flex justify-content-center">
+          <div className="col-md-10 d-flex flex-column align-items-center align-self-end">
+            <h3 className="text-center mb-5">
               ¿Listo para evolucionar en la jungla digital?
             </h3>
-            <button onClick={()=> subirCohete()} class="mb-5 btn-power ">
+            <button onClick={()=> subirCohete()} className="mb-5 btn-power ">
               <ButtonIllustration />
             </button>
           </div>
         </div>
-        <div class="container-form-cohete2" style={{ overflow: "hidden" }}>
-          <div class="container-cohete-form">
-            <div class="col-md-12 d-flex flex-column align-items-center cohete-form-container">
+        <div className="container-form-cohete2" style={{ overflow: "hidden" }}>
+          <div className="container-cohete-form">
+            <div className="col-md-12 d-flex flex-column align-items-center cohete-form-container">
               <dotlottie-player
                 id="cohete-form"
                 autoplay
@@ -60,32 +60,32 @@ function Rocket() {
                 background="transparent"
                 speed="1"
                 style={{ width: "910px", height: "auto", zIndex: 1 }}
-                class="rocket"
+                className="rocket"
               ></dotlottie-player>
             </div>
             <div
-              class="row d-flex justify-content-center content-form"
+              className="row d-flex justify-content-center content-form"
               id="form-contact"
             >
-              <div class="col-md-8 bg-form">
-                <div class="d-none d-md-flex align-items-baseline justify-content-center">
+              <div className="col-md-8 bg-form">
+                <div className="d-none d-md-flex align-items-baseline justify-content-center">
                   <img
                     loading="lazy"
                     width="19.738"
                     height="19.733"
                     src="images/icon-arrow-form.svg" alt="arrow"/>
-                  <h3 class="fc-darkBlue-01 fs-32 text-center ms-2">
+                  <h3 className="fc-darkBlue-01 fs-32 text-center ms-2">
                     Dejanos tu mensaje o inquietud
                   </h3>
                 </div>
-                <p class="fs-18 ff-circularBook fc-darkBlue-01 text-center mb-4 mt-0 mt-md-3 mt-md-0 d-none d-md-block">
+                <p className="fs-18 ff-circularBook fc-darkBlue-01 text-center mb-4 mt-0 mt-md-3 mt-md-0 d-none d-md-block">
                   (Leemos atentamente, esto no es un bot)
                 </p>
-                <div class="d-none d-md-flex justify-content-center mb-4">
+                <div className="d-none d-md-flex justify-content-center mb-4">
                   <a href="mailto:contacto@chimpancedigital.com.ar">
-                    <div class="d-flex me-4">
+                    <div className="d-flex me-4">
                       <svg
-                        class="mx-3"
+                        className="mx-3"
                         xmlns="http://www.w3.org/2000/svg"
                         width="23.33"
                         height="17.376"
@@ -99,7 +99,7 @@ function Rocket() {
                           fill="#0075a9"
                         ></path>
                       </svg>
-                      <p class="fc-darkBlue-01 mb-0">
+                      <p className="fc-darkBlue-01 mb-0">
                         contacto@chimpancedigital.com.ar
                       </p>
                     </div>
@@ -108,49 +108,49 @@ function Rocket() {
                   <a
                     target="_blank"
                     rel="noreferrer"
-                    class="d-block d-md-none"
+                    className="d-block d-md-none"
                     href="https://api.whatsapp.com/send?phone=+5493516503470&amp;text=Buenos%20días,%20quiero%20mas%20info%20sobre%20desarrollo%20web"
                   >
-                    <div class="d-flex ms-4">
+                    <div className="d-flex ms-4">
                       <img
                         loading="lazy"
                         src="images/icon-phone-form.svg"
                         width="21.847"
                         height="21.839"
-                        class="me-3"
+                        className="me-3"
                         alt="phone"
                       />
-                      <p class="fc-darkBlue-01 mb-0">351 650-3470</p>
+                      <p className="fc-darkBlue-01 mb-0">351 650-3470</p>
                     </div>
                   </a>
                   <a
                     target="_blank"
                     rel="noreferrer"
-                    class="d-none d-md-block"
+                    className="d-none d-md-block"
                     href="https://web.whatsapp.com/send?phone=+5493516503470&amp;text=Buenos%20días,%20quiero%20mas%20info%20sobre%20desarrollo%20web"
                   >
-                    <div class="d-flex ms-4">
+                    <div className="d-flex ms-4">
                       <img
                         alt="icon-phone"
                         src="images/icon-phone-form.svg"
                         width="21.847"
                         height="21.839"
-                        class="me-3"
+                        className="me-3"
                       />
-                      <p class="fc-darkBlue-01 mb-0">351 650-3470</p>
+                      <p className="fc-darkBlue-01 mb-0">351 650-3470</p>
                     </div>
                   </a>
                 </div>
-                <div class="bg-form-input">
+                <div className="bg-form-input">
                   <form
                     action=""
                     id="form-cohete"
                     method="post"
                     style={{ height: "auto" }}
                   >
-                    <div class="input-group input-group-lg mb-4 position-relative">
+                    <div className="input-group input-group-lg mb-4 position-relative">
                       <span
-                        class="input-group-text d-block d-md-none"
+                        className="input-group-text d-block d-md-none"
                         id="basic-addon1"
                       >
                         <svg
@@ -170,15 +170,15 @@ function Rocket() {
                       </span>
                       <input
                         type="text"
-                        class="form-control"
+                        className="form-control"
                         id="name"
                         placeholder="Nombre y Apellido"
                         required
                       />
                     </div>
-                    <div class="input-group input-group-lg mb-4 position-relative">
+                    <div className="input-group input-group-lg mb-4 position-relative">
                       <span
-                        class="input-group-text d-block d-md-none"
+                        className="input-group-text d-block d-md-none"
                         id="basic-addon1"
                       >
                         <svg
@@ -198,15 +198,15 @@ function Rocket() {
                       </span>
                       <input
                         type="mail"
-                        class="form-control"
+                        className="form-control"
                         id="mail"
                         placeholder="Email"
                         required
                       />
                     </div>
-                    <div class="input-group input-group-lg mb-4 position-relative">
+                    <div className="input-group input-group-lg mb-4 position-relative">
                       <span
-                        class="input-group-text d-block d-md-none"
+                        className="input-group-text d-block d-md-none"
                         id="basic-addon1"
                       >
                         <svg
@@ -252,18 +252,18 @@ function Rocket() {
                       </span>
                       <input
                         type="number"
-                        class="form-control"
+                        className="form-control"
                         id="phone"
                         placeholder="Teléfono"
                         required
                       />
                     </div>
                     <div
-                      class="custom-select input-group input-group-lg mb-4 position-relative"
+                      className="custom-select input-group input-group-lg mb-4 position-relative"
                       id="select2"
                     >
                       <span
-                        class="input-group-text d-block d-md-none"
+                        className="input-group-text d-block d-md-none"
                         id="basic-addon1"
                       >
                         <svg
@@ -290,12 +290,12 @@ function Rocket() {
                       <textarea
                         name="message"
                         id="message"
-                        class="bg-transparent border-0 form-control p-0"
+                        className="bg-transparent border-0 form-control p-0"
                         cols="30"
                         rows="4"
                         placeholder="Dejanos tu consulta"
                       ></textarea>
-                      {/*  <select class="form-select" name="service" id="service">
+                      {/*  <select className="form-select" name="service" id="service">
                                          <option selected>Elegí el Servicio</option>
                                          <option value="1">UX</option>
                                          <option value="2">UI</option>
@@ -305,11 +305,11 @@ function Rocket() {
                                          <option value="6">Leads</option>
                                      </select>  */}
                     </div>
-                    <div class="d-grid gap-2 pt-3">
-                      <button type="submit" class="btn btn-send">
+                    <div className="d-grid gap-2 pt-3">
+                      <button type="submit" className="btn btn-send">
                         Enviar
                         <svg
-                          class="ms-3"
+                          className="ms-3"
                           xmlns="http://www.w3.org/2000/svg"
                           width="15"
                           height="15"
@@ -327,7 +327,7 @@ function Rocket() {
                   </form>
                   <div
                     id="contact_form"
-                    class="d-flex justify-content-center"
+                    className="d-flex justify-content-center"
                   ></div>
                 </div>
               </div>

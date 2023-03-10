@@ -1,6 +1,6 @@
 .filter-cont {
   position: absolute;
-  z-index: 20;
+  z-index: 90;
   margin-top: 5px;
 }
 

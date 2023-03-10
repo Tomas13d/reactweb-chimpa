@@ -43,15 +43,10 @@ export const sortHandlerOptions = (value) => {
   return options
 }
 
-export const filterProyects = (proyects, filters ) => {
-  let filteredProyects= []
-  console.log("filters -->", filters);
-    proyects.forEach((item)=> {
-      filters.forEach(filter => {
-        if(item.CATEGORIA.includes(filter)) filteredProyects.push(item)
-        if(item.CARACTERISTICAS.includes(filter)) filteredProyects.push(item)
-        if(item.LENGUAJE.includes(filter)) filteredProyects.push(item)
-      })
-    });
-    return filteredProyects
+
+export function filterObjectsByTags(proyects, tags) {
+  return proyects.filter(obj => {
+    const allTags = [...obj.CATEGORIA, ...obj.LENGUAJE, ...obj.CARACTERISTICAS];
+    return tags.some(tag => allTags.includes(tag));
+  });
 }

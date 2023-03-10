@@ -2207,6 +2207,7 @@ const trasnformGaleryJson = (galeryJson) => {
     proyect.CARACTERISTICAS = proyect.CARACTERISTICAS.replaceAll(/\s/g, "").split(",");
     proyect.PROYECTO = proyect.PROYECTO.trim();
     proyect.IMG_SRC = `${proyect.ID}.png`;
+    proyect.GROUPS= JSON.stringify(proyect.CARACTERISTICAS.concat(proyect.LENGUAJE, proyect.CATEGORIA))
     /* aca puedo ir agregando las categorias que necesito y sus titulos */
     getCategories(proyect.CATEGORIA, "Tipos de Web");
     getCategories(proyect.LENGUAJE, "Lenguajes");

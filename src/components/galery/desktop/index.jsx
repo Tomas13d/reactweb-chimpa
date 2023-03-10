@@ -149,7 +149,7 @@ function DesktopGalery({ firstTitle, secondTitle }) {
                   }`}
                   data-priority={proyect.PRIORIDAD}
                   data-created={proyect.AÑO}
-                  data-groups={JSON.stringify(proyect.CATEGORIA.concat(proyect.LENGUAJE,proyect.CARACTERISTICAS))}
+                  data-groups={proyect.GROUPS}
                 >
                   <div className="position-relative inner-box">
                     <div className="image position-relative ">

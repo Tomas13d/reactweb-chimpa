@@ -10,7 +10,7 @@ function Galery({firstTitle, secondTitle }) {
 
       </Row>
       <Col className="d-none d-md-block">
-                 {/* <DesktopGalery firstTitle={firstTitle} secondTitle={secondTitle}/> */} 
+                 <DesktopGalery firstTitle={firstTitle} secondTitle={secondTitle}/>
             </Col>
             <Col md="d-block d-md-none">
                 <GaleryMobile secondTitle={secondTitle}/>

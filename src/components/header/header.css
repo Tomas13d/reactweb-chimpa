@@ -14,14 +14,13 @@ header.proyectos {
         bottom no-repeat,
       url(../../../public/images/bg-header-desarrollo-web.jpg) center center
         no-repeat;
-    background-size: 100vw, cover;
+    background-size: 56vw, cover;
   }
   
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 468px) {
   header.proyectos {
-    height: 100vh;
     background: url(../../../public/images/img-header-proyectos.svg) center
         bottom no-repeat,
       url(../../../public/images/bg-header-desarrollo-web.jpg) center center

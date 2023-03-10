@@ -129,6 +129,9 @@ strong {
   color: var(--lightBlue-01);
   font-family: var(--circularBold);
 }
+.ff-circularBook {
+  font-family: var(--circularBook);
+}
 
 .ff-circularBold {
   font-family: var(--circularBold);
@@ -146,6 +149,9 @@ strong {
 }
 .fc-lightBlue-01 {
   color: var(--lightBlue-01);
+}
+.fc-darkBlue-01 {
+  color: var(--darkBlue-01);
 }
 
 .fc-yellow {

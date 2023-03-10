@@ -1,0 +1,158 @@
+#form {
+    z-index: 2;
+    position: relative;
+    background: url(../../../public/images/bg-form.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.bg-form {
+    padding: 90px !important;
+    background: #E8F0FB;
+    border-radius: 22px;
+}
+
+.content-form {
+    overflow: hidden;
+    height: 0px;
+    transition: all .8s ease-in;
+}
+
+.scroll {
+    transition: all .8s ease-in;
+    height: 200px;
+}
+
+.rocket {
+    min-height: 511px;
+}
+
+#form input,
+#form .custom-select {
+    border: 0;
+    font-size: 18px;
+    padding-left: 0;
+    border-radius: 0;
+    background: none;
+    position: relative;
+    color: var(--darkBlue-01);
+    font-family: var(--circularBook);
+    border-bottom: 1px solid var(--darkBlue-01);
+}
+
+#form .custom-select select {
+    display: none;
+}
+
+#form .custom-select span {
+    border: none !important;
+    background: none;
+}
+
+#form .select-selected {
+    background: none;
+}
+
+/* Style the arrow inside the select element: */
+#form .select-selected:after {
+    content: "";
+    right: 0;
+    width: .5rem;
+    height: .5rem;
+    position: absolute;
+    border-bottom: 2px solid var(--darkBlue-01);
+    border-left: 2px solid var(--darkBlue-01);
+    border-bottom-left-radius: 2px;
+    transform-origin: center center;
+    transform: rotate(-45deg) translate(0%, 0%);
+    transition: transform ease-in-out 200ms;
+}
+
+#form .select-selected.select-arrow-active:after {
+    transform: rotate(135deg) translate(50%, 0%);
+}
+
+#form .select-selected {
+    color: var(--darkBlue) !important;
+}
+
+#form .select-selected {
+    padding-left: 0 !important;
+}
+
+#form .select-items div,
+#form .select-selected {
+    display: flex;
+    font-size: 18px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid transparent;
+    padding: .375rem 2.25rem .375rem .75rem;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+}
+
+/* Style items (options): */
+#form .select-items {
+    left: 0;
+    right: 0;
+    top: 52px;
+    z-index: 99;
+    position: absolute;
+    background: white;
+}
+
+/* Hide the items when the select box is closed: */
+#form .select-hide {
+    display: none;
+}
+
+#form .select-items div:hover,
+.same-as-selected {
+    color: white;
+    background: var(--darkBlue-01);
+}
+
+#form .btn-send {
+    width: 100%;
+    display: flex;
+    color: white;
+    font-size: 21px;
+    border-bottom: 5px;
+    align-items: center;
+    justify-content: center;
+    background: var(--lightBlue);
+    font-family: var(--circularBold);
+}
+
+#form .btn-send:hover {
+    color: white;
+    background: var(--darkBlue-01);
+    cursor: url(../../../public/images/cursor-ok.svg), pointer;
+}
+
+#form .btn-send svg path {
+    transition: all .3s;
+}
+
+#form .btn-send:hover svg path {
+    fill: white;
+}
+
+#form .form-control::placeholder {
+    color: var(--darkBlue);
+}
+
+.fs-32{
+    font-size: 32px;
+}
+.btn-power {
+    animation: pulse 2s infinite;
+}
+
+.btn-power path {
+    transition: all .3s ease-in;
+}
+
+.btn-power:hover path.color {
+    fill: #36A9E1;
+}

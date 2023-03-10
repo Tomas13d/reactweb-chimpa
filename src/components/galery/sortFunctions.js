@@ -44,7 +44,7 @@ export const sortHandlerOptions = (value) => {
 }
 
 
-export function filterObjectsByTags(proyects, tags) {
+export function filterProyectsByTags(proyects, tags) {
   return proyects.filter(obj => {
     const allTags = [...obj.CATEGORIA, ...obj.LENGUAJE, ...obj.CARACTERISTICAS];
     return tags.some(tag => allTags.includes(tag));

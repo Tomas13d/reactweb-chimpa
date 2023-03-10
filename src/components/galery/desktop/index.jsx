@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from "react";
+import { Container, Row } from "react-bootstrap";
 import AOS from "aos";
 import Shuffle from "shufflejs";
-import { Container, Row } from "react-bootstrap";
+import FilterDropdown from "../filterDropdown";
+import { sortHandlerOptions } from "../sortFunctions";
 import { sortedJson, allCategories } from "../../../utils/galery";
-import FilterDropdown from "./filterDropdown";
 import "./galeryDesktop.css";
-import { sortHandlerOptions } from "./sortFunctions";
 
 function DesktopGalery({ firstTitle, secondTitle }) {
   const [proyects, setProyects] = useState([]);

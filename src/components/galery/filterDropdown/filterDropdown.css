@@ -103,7 +103,7 @@
 }
 
 .custom-checkbox:hover {
-  cursor: url(../../../../../public/images/cursor.svg), pointer;
+  cursor: url(../../../../public/images/cursor.svg), pointer;
 }
 
 .sticky-column {

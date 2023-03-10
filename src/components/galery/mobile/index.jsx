@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import { Container, Row } from "react-bootstrap";
+import { Container} from "react-bootstrap";
 import { sortedJson, allCategories } from "../../../utils/galery";
-import FilterDropdown from "../desktop/filterDropdown";
-import { filterObjectsByTags, filterProyects } from "../desktop/sortFunctions";
+import FilterDropdown from "../filterDropdown";
+import { filterProyectsByTags } from "../sortFunctions";
 import "./galeryMobile.css";
 
 function GaleryMobile({ secondTitle }) {
@@ -43,7 +43,7 @@ function GaleryMobile({ secondTitle }) {
       : filters.splice(filters.indexOf(input.value), 1);
     setActiveFilters(filters);
     filters.length !== 0
-      ? setProyects(filterObjectsByTags(allProyects, filters))
+      ? setProyects(filterProyectsByTags(allProyects, filters))
       : setProyects(allProyects);
     setShowMore(5);
   };

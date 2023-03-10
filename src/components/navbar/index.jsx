@@ -4,6 +4,7 @@ import '@dotlottie/player-component';
 import ChimpanceLogo from "../../assets/illustrations/ChimpanceLogo";
 import ImgIsoOjos from "../../assets/illustrations/ImgIsoOjos";
 import lottie from "../../assets/lotties/bg-jungla-desk.lottie"
+import lottieMobile from "../../assets/lotties/bg-jungla-mobile.lottie"
 import "./navbar.css"
 
 function NavbarApp() {
@@ -47,7 +48,7 @@ function NavbarApp() {
                         <dotlottie-player id="nav-deskLottie" autoplay loop  mode="normal" src={lottie} background="transparent" style={{width: "100vw", height: "100vh", zIndex:0, transform: "scale(1.3)"}}/>
                 </div>
                 <div id="bg-video" className="d-block d-md-none video-container" >
-                        <dotlottie-player autoplay loop  mode="normal" src={lottie} background="transparent" style={{width: "100vw", height: "100vh", zIndex:0, transform: "scale(1.3)"}}/>
+                        <dotlottie-player autoplay loop  mode="normal" src={lottieMobile} background="transparent" style={{width: "100vw", height: "100vh", zIndex:0, transform: "scale(1.3)"}}/>
                 </div>
                 <div>
                     <ul className="p-0">

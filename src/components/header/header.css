@@ -7,7 +7,26 @@ header.proyectos {
   background-size: 43vw, cover;
 }
 
-header.proyectos h4 {
-  font-size: 57px;
-  font-family: var(--circularBook);
+
+@media only screen and (max-width: 768px) {
+  header.proyectos {
+    background: url(../../../public/images/img-header-proyectos.svg) center
+        bottom no-repeat,
+      url(../../../public/images/bg-header-desarrollo-web.jpg) center center
+        no-repeat;
+    background-size: 100vw, cover;
+  }
+  
+}
+
+@media only screen and (max-width: 768px) {
+  header.proyectos {
+    height: 100vh;
+    background: url(../../../public/images/img-header-proyectos.svg) center
+        bottom no-repeat,
+      url(../../../public/images/bg-header-desarrollo-web.jpg) center center
+        no-repeat;
+    background-size: 100vw, cover;
+  }
+  
 }

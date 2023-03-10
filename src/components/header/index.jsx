@@ -7,8 +7,8 @@ function Header({deskTopText, mobileText, headerClass }) {
     <Container>
         <Row>
             <Col md="6">
-                <h3 className="d-none d-md-block">{deskTopText}</h3>
-                <h3 className="d-block d-md-none text-center">{mobileText}</h3>
+                <h3 className="d-none d-md-block ff-circularBold ">{deskTopText}</h3>
+                <h3 className="d-block d-md-none text-center ff-circularBold ">{mobileText}</h3>
             </Col>
         </Row>
     </Container>

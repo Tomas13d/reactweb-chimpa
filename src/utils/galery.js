@@ -2102,7 +2102,7 @@ const galeryProyects = [
     TAG_IMG:
       "Diseño y desarrollo de página web para Plataforma de gestión de trámites y consultas",
   },
-  /*   {
+    {
       "ID": "95",
       "PROYECTO": "Everlight",
       "TITULO": "Fábrica de mochilas y bolsos ",
@@ -2186,7 +2186,7 @@ const galeryProyects = [
       "MOBILE": "",
       "MOCK": "",
       "LENGUAJE": "React, Laravel",
-      "CARACTERISTICAS": "Sistema de pedidos",
+      "CARACTERISTICAS": "Sistema-de-pedidos",
       "PRIORIDAD": "Media",
       "LINK": "",
       "TAG_MOCK": "",
@@ -2239,7 +2239,7 @@ const galeryProyects = [
       "PAIS": "Argentina",
       "AÑO": "2018",
       "TAG_IMG": "Diseño y desarrollo de página web para Hotel Boutique "
-  } */
+  } 
 ];
 const categories = {};
 const getCategories = (categoryArray, categoryName) => {

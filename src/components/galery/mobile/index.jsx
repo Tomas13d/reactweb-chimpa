@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import { Container} from "react-bootstrap";
-import { sortedJson, allCategories } from "../../../utils/galery";
+import { Container } from "react-bootstrap";
 import FilterDropdown from "../filterDropdown";
 import { filterProyectsByTags } from "../sortFunctions";
+import { proyectJson, allCategories } from "../../../utils/galery";
 import "./galeryMobile.css";
 
 function GaleryMobile({ secondTitle }) {
@@ -13,34 +13,33 @@ function GaleryMobile({ secondTitle }) {
   const [showFilterNav, setShowFilterNav] = useState(false);
   const [activeFilter, setActiveFilters] = useState([]);
   const [showMore, setShowMore] = useState(5);
-  const amountOfCards = useRef(5);
+  const loadAmount = useRef(5);
 
   useEffect(() => {
-    showMore === 5
-      ? setSegmentedProjects(proyects.slice(0, showMore))
-      : showMore >= proyects.length
-      ? setSegmentedProjects(proyects)
-      : setSegmentedProjects(
-          segmentedProjects.concat(
-            proyects.slice(showMore, showMore + amountOfCards.current)
+    if (proyectJson) {
+      setProyects(proyectJson);
+      setAllProyects(proyectJson);
+    }
+    if(allCategories) setCategories(allCategories);
+  }, []);
+
+  useEffect(() => {
+    setSegmentedProjects(
+      showMore === 5
+        ? proyects.slice(0, showMore)
+        : showMore >= proyects.length
+        ? proyects
+        : segmentedProjects.concat(
+            proyects.slice(showMore, showMore + loadAmount.current)
           )
-        );
+    );
   }, [proyects, showMore]);
 
-  useEffect(() => {
-    if (sortedJson) {
-      setCategories(allCategories);
-      setProyects(sortedJson);
-      setAllProyects(sortedJson);
-    }
-  }, [sortedJson]);
-
   const handleChange = (e) => {
-    const input = e.currentTarget;
     const filters = activeFilter;
-    input.checked
-      ? filters.push(input.value)
-      : filters.splice(filters.indexOf(input.value), 1);
+    e.currentTarget.checked
+      ? filters.push(e.currentTarget.value)
+      : filters.splice(filters.indexOf(e.currentTarget.value), 1);
     setActiveFilters(filters);
     filters.length !== 0
       ? setProyects(filterProyectsByTags(allProyects, filters))
@@ -67,10 +66,7 @@ function GaleryMobile({ secondTitle }) {
 
       <div className="horizontal-galery-cont">
         {segmentedProjects.map((proyect, i) => (
-          <div
-            className={`mobile-galery-card`}
-            key={i + new Date().getTime}
-          >
+          <div className={`mobile-galery-card`} key={i + new Date().getTime}>
             <img
               src={`images/portfolio/${proyect.IMG_SRC}`}
               alt={proyect.PROYECTO}
@@ -90,7 +86,7 @@ function GaleryMobile({ secondTitle }) {
         {segmentedProjects.length !== proyects.length ? (
           <div
             className={`see-more-card`}
-            onClick={() => setShowMore(showMore + amountOfCards.current)}
+            onClick={() => setShowMore(showMore + loadAmount.current)}
           >
             <p>Ver más proyectos</p>
           </div>

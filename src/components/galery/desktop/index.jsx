@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react";
-import { Container, Row } from "react-bootstrap";
 import AOS from "aos";
 import Shuffle from "shufflejs";
+import { Container, Row } from "react-bootstrap";
 import FilterDropdown from "../filterDropdown";
 import { sortHandlerOptions } from "../sortFunctions";
-import { sortedJson, allCategories } from "../../../utils/galery";
+import { proyectJson, allCategories } from "../../../utils/galery";
 import "./galeryDesktop.css";
 
 function DesktopGalery({ firstTitle, secondTitle }) {
@@ -17,7 +17,7 @@ function DesktopGalery({ firstTitle, secondTitle }) {
   const [showFilterNav, setShowFilterNav] = useState(false);
   const [inLast, setInLast] = useState(false);
   const lastImage = useRef(null);
-  const amountOfCards = useRef(20)
+  const loadAmount = useRef(20);
 
   useEffect(() => {
     AOS.init({ once: true });
@@ -26,12 +26,12 @@ function DesktopGalery({ firstTitle, secondTitle }) {
       buffer: 1,
     });
     setShuffleRef(shuffle);
+    if (proyectJson) setProyects(proyectJson);
+    if (allCategories) setCategories(allCategories);
   }, []);
 
   useEffect(() => {
-    if (shuffleRef) {
-      shuffleRef.layout();
-    }
+    if (shuffleRef) shuffleRef.layout();
     if (
       lastImage.current !== null &&
       !lastImage.current.classList.contains("no-load") &&
@@ -40,13 +40,6 @@ function DesktopGalery({ firstTitle, secondTitle }) {
       setInLast(true);
     }
   }, [showMore, activeFilter]);
-
-  useEffect(() => {
-    if (sortedJson) {
-      setCategories(allCategories);
-      setProyects(sortedJson);
-    }
-  }, [sortedJson]);
 
   useEffect(() => {
     if (shuffleRef) shuffleRef.resetItems();
@@ -68,12 +61,12 @@ function DesktopGalery({ firstTitle, secondTitle }) {
       }
     }
     setActiveFilters(filters);
-    shuffleRef.filter(filters)
+    shuffleRef.filter(filters);
   };
 
   const handleSort = (e) => {
     let value = e.target.value;
-    let options= sortHandlerOptions(value)
+    let options = sortHandlerOptions(value);
     shuffleRef.sort(options);
     setShowMore(1);
   };
@@ -128,7 +121,12 @@ function DesktopGalery({ firstTitle, secondTitle }) {
           </div>
         </div>
         <div className={`${showFilterNav ? "col-3" : "col-1"}`}>
-          <FilterDropdown categories={categories} handleChange={handleChange} show={showFilterNav} setShow={setShowFilterNav}/>
+          <FilterDropdown
+            categories={categories}
+            handleChange={handleChange}
+            show={showFilterNav}
+            setShow={setShowFilterNav}
+          />
         </div>
         <div className={`${showFilterNav ? "col-9" : "col-11"}`}>
           <div className="row shuffle-wrapper">
@@ -141,7 +139,7 @@ function DesktopGalery({ firstTitle, secondTitle }) {
                   className={`shuffle-item ${
                     activeFilter.length > 0
                       ? "col-lg-4 col-6 mb-4"
-                      : showMore * amountOfCards.current >= i
+                      : showMore * loadAmount.current >= i
                       ? "col-lg-4 col-6 mb-4"
                       : "no-load"
                   }`}
@@ -150,7 +148,6 @@ function DesktopGalery({ firstTitle, secondTitle }) {
                   data-groups={proyect.GROUPS}
                 >
                   <div className="position-relative inner-box">
-                 
                     <div className="image">
                       <img
                         src={`images/portfolio/${proyect.IMG_SRC}`}
@@ -158,10 +155,17 @@ function DesktopGalery({ firstTitle, secondTitle }) {
                         className="img-fluid d-block img-portfolio"
                       />
                       {proyect.IMG_COUNTRY ? (
-                       <img src={`images/flags/${proyect.IMG_COUNTRY}`} className="card-flag" alt="Flag"/>
-                      ) : (<></>)}
+                        <img
+                          src={`images/flags/${proyect.IMG_COUNTRY}`}
+                          className="card-flag"
+                          alt="Flag"
+                        />
+                      ) : (
+                        <></>
+                      )}
                       <div className="overlay-box">
-                        {proyect.LINK === "No funciona" || proyect.LINK === "" ? (
+                        {proyect.LINK === "No funciona" ||
+                        proyect.LINK === "" ? (
                           <></>
                         ) : (
                           <a
@@ -174,8 +178,12 @@ function DesktopGalery({ firstTitle, secondTitle }) {
 
                         <div className="overlay-inner">
                           <div className="overlay-content">
-                            <p className="ff-circularLight card-title">{proyect.TITULO}</p>
-                            <h5 className="ff-circularBold fc-lightBlue card-title-proyect">{proyect.PROYECTO}</h5>
+                            <p className="ff-circularLight card-title">
+                              {proyect.TITULO}
+                            </p>
+                            <h5 className="ff-circularBold fc-lightBlue card-title-proyect">
+                              {proyect.PROYECTO}
+                            </h5>
                           </div>
                         </div>
                       </div>
@@ -201,8 +209,4 @@ function DesktopGalery({ firstTitle, secondTitle }) {
     </Container>
   );
 }
-
 export default DesktopGalery;
-
-/*
- */

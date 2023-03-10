@@ -11,6 +11,7 @@ function NavbarApp() {
     const [navBackground, setNavBackground] = useState(false)
     const navRef = useRef()
     navRef.current = navBackground
+
     useEffect(() => {
       const handleScroll = () => {
         const show = window.scrollY > 50
@@ -23,6 +24,7 @@ function NavbarApp() {
         document.removeEventListener('scroll', handleScroll)
       }
     }, [])
+    
   return (
     <>
     <Navbar id="navbar" className={`navbar custom-nav ${navBackground ? "background-filter" : ""}`}>

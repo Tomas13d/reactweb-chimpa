@@ -1,15 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Form } from "react-bootstrap";
 import "./filterDropdown.css";
 
 function FilterDropdown({ handleChange, categories, show, setShow, mobileSize }) {
-  
-  const [filters, setFilters] = useState({});
-
-  useEffect(() => {
-    setFilters(categories);
-  }, [categories]);
-
   return (
     <div className="filter-cont sticky-column">
       <i className={`bi bi-sliders filter-icon ${show ? "no-show" : ""}`} onClick={() => setShow(true)}></i>
@@ -31,14 +24,14 @@ function FilterDropdown({ handleChange, categories, show, setShow, mobileSize })
 
         <div className="filter-body">
           <h6 className="filter-by">Filtrar Por</h6>
-          {Object.keys(filters).map((filterHeader, index) => (
+          {Object.keys(categories).map((filterHeader, index) => (
             <React.Fragment key={index + new Date().getTime}>
               <h6 className="ff-circularBold category-header" >
                 {filterHeader}
               </h6>
               <Form className="inputs-cont">
-                {filters["Tipos de Web"] &&
-                  filters[filterHeader].map((category, i) => (
+                {categories["Tipos de Web"] &&
+                  categories[filterHeader].map((category, i) => (
                     <Form.Group
                       key={`${filterHeader}_${i}`}
                       className="mb-3"
@@ -55,7 +48,7 @@ function FilterDropdown({ handleChange, categories, show, setShow, mobileSize })
                     </Form.Group>
                   ))}
               </Form>
-              {index === Object.keys(filters).length - 1 ? (
+              {index === Object.keys(categories).length - 1 ? (
                 <></>
               ) : (
                 <hr className="line-separator" />

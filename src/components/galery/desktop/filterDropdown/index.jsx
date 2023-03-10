@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Form } from "react-bootstrap";
 import "./filterDropdown.css";
 
-function FilterDropdown({ handleChange, categories, show, setShow }) {
+function FilterDropdown({ handleChange, categories, show, setShow, mobileSize }) {
   
   const [filters, setFilters] = useState({});
 
@@ -13,7 +13,7 @@ function FilterDropdown({ handleChange, categories, show, setShow }) {
   return (
     <div className="filter-cont sticky-column">
       <i className={`bi bi-sliders filter-icon ${show ? "no-show" : ""}`} onClick={() => setShow(true)}></i>
-      <div className={`dropdown-custom ${show ? "show" : "hidden"}`}>
+      <div className={`dropdown-custom ${show ? "show" : "hidden"} ${mobileSize ? "mobileSize": "generalSize"}`}>
         <div className="filter-drop-header d-flex justify-content-between align-items-baseline">
           <div className="icon-and-header">
             <i
@@ -32,7 +32,7 @@ function FilterDropdown({ handleChange, categories, show, setShow }) {
         <div className="filter-body">
           <h6 className="filter-by">Filtrar Por</h6>
           {Object.keys(filters).map((filterHeader, index) => (
-            <>
+            <React.Fragment key={index + new Date().getTime}>
               <h6 className="ff-circularBold category-header" >
                 {filterHeader}
               </h6>
@@ -60,7 +60,7 @@ function FilterDropdown({ handleChange, categories, show, setShow }) {
               ) : (
                 <hr className="line-separator" />
               )}
-            </>
+            </React.Fragment>
           ))}
         </div>
       </div>

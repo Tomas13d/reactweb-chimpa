@@ -5,18 +5,19 @@ import { Container, Row } from "react-bootstrap";
 import { sortedJson, allCategories } from "../../../utils/galery";
 import FilterDropdown from "./filterDropdown";
 import "./galeryDesktop.css";
-import { sortByDate, sortByPriority } from "./sortFunctions";
+import { sortHandlerOptions } from "./sortFunctions";
 
 function DesktopGalery({ firstTitle, secondTitle }) {
   const [proyects, setProyects] = useState([]);
-  const [showMore, setShowMore] = useState(1);
   const [categories, setCategories] = useState([""]);
   const [activeFilter, setActiveFilters] = useState([]);
-  const [show, setShow] = useState(false);
-  const [showFilterNav, setShowFilterNav] = useState(false);
   const [shuffleRef, setShuffleRef] = useState();
+  const [show, setShow] = useState(false);
+  const [showMore, setShowMore] = useState(1);
+  const [showFilterNav, setShowFilterNav] = useState(false);
   const [inLast, setInLast] = useState(false);
   const lastImage = useRef(null);
+  const amountOfCards = useRef(20)
 
   useEffect(() => {
     AOS.init({ once: true });
@@ -69,34 +70,12 @@ function DesktopGalery({ firstTitle, secondTitle }) {
       }
     }
     setActiveFilters(filters);
-    shuffleRef.filter(filters);
+    shuffleRef.filter(filters)
   };
 
   const handleSort = (e) => {
     let value = e.target.value;
-    let options;
-    switch (value) {
-      case "newer":
-        options = {
-          reverse: true,
-          by: sortByDate,
-        };
-        break;
-      case "older":
-        options = {
-          reverse: false,
-          by: sortByDate,
-        };
-        break;
-      case "relevant":
-        options = {
-          by: sortByPriority,
-        };
-        break;
-
-      default:
-        options = {};
-    }
+    let options= sortHandlerOptions(value)
     shuffleRef.sort(options);
     setShowMore(1);
   };
@@ -164,7 +143,7 @@ function DesktopGalery({ firstTitle, secondTitle }) {
                   className={`shuffle-item ${
                     activeFilter.length > 0
                       ? "col-lg-4 col-6 mb-4"
-                      : showMore * 20 >= i
+                      : showMore * amountOfCards.current >= i
                       ? "col-lg-4 col-6 mb-4"
                       : "no-load"
                   }`}

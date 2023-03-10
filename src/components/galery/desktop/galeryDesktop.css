@@ -20,7 +20,7 @@
   overflow: hidden;
 }
 
-.inner-box .image img {
+.inner-box .image .img-portfolio {
   position: relative;
   width: 100%;
   display: block;
@@ -53,7 +53,7 @@
   background-color: rgba(47, 50, 56, 0.8);
 }
 
-.inner-box:hover .image img {
+.inner-box:hover .image .img-portfolio {
   transform: scale(1.1);
 }
 
@@ -77,47 +77,59 @@
 .inner-box .image .overlay-box .overlay-inner {
   position: absolute;
   left: 0px;
-  bottom: 30px;
+  bottom: 10px;
   z-index: 1;
-  padding: 10px 40px;
+  padding: 10px 20px;
 }
 
 .inner-box .image .overlay-box .overlay-inner .overlay-content i {
-  font-size: 28px;
+  font-size: 24px;
 }
 
 .inner-box .image h3 {
   color: #fff;
 }
 
-.overlay-content h5 {
-  text-transform: capitalize;
-  padding: 0px 8px;
-  margin-bottom: 0px;
-  transform: translateX(-150px);
-  transition: all 0.3s;
-}
+.card-flag{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 20px;
+  height: 15px;
+  max-height: 15px;
+  max-width: 20px;
+} 
+
 .overlay-content p {
   font-size: 14px;
   margin-bottom: 0px;
   padding: 0px 8px;
+  margin-top: 5px;
+  color: #ffffff;
+  transform: translateX(-150px);
+  transition: all 0.5s;
+}
+.overlay-content h5 {
+  font-size: 16px;
+  margin-bottom: 0px;
+  padding: 0px 8px;
   margin-top: 2px;
   text-transform: capitalize;
-  color: #ffffff;
+  color: var(--lightBlue);
   transform: translateX(-150px);
   transition: all 0.5s;
 }
 
 
 .portfolio-image {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   text-align: center;
   background: #d1d1d1;
   color: #0a0a0a;
-  padding-top: 16px;
+  padding-top: 11px;
   position: absolute;
-  top: 40%;
+  top: 30%;
   font-size: 22px;
   margin-left: -28px;
   left: 50%;

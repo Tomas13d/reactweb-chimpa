@@ -41,7 +41,7 @@ const galeryProyects = [
       "PRIORIDAD": "Alta",
       "LINK": "No funciona",
       "TAG_MOCK": "Empresarial",
-      "PAIS": "Estados Unidos",
+      "PAIS": "",
       "AÑO": "2021",
       "TAG_IMG": "Diseño y desarrollo de página web para Plataforma de soluciones logísticas"
   },
@@ -271,7 +271,7 @@ const galeryProyects = [
       "PRIORIDAD": "Media",
       "LINK": "https://aeromas.com/",
       "TAG_MOCK": "",
-      "PAIS": "Uruguay ",
+      "PAIS": "Uruguay",
       "AÑO": "2022",
       "TAG_IMG": "Diseño y desarrollo de página web para Vuelos en Jet privados"
   },
@@ -409,7 +409,7 @@ const galeryProyects = [
       "PRIORIDAD": "Media",
       "LINK": "",
       "TAG_MOCK": "",
-      "PAIS": "argentina",
+      "PAIS": "Argentina",
       "AÑO": "",
       "TAG_IMG": "Diseño y desarrollo de página web para Ecommerce de Grow Shop "
   },
@@ -428,7 +428,7 @@ const galeryProyects = [
       "MOBILE": "",
       "MOCK": "Listo",
       "LENGUAJE": "Bootstrap, PHP, Laravel",
-      "CARACTERISTICAS": "Pagos-Online, Sistema-de-gestión, Catálago-de-productos, Autoadministrable",
+      "CARACTERISTICAS": "Pagos-Online, Sistema-de-gestión,Catálago-de-productos, Autoadministrable",
       "PRIORIDAD": "Media",
       "LINK": "https://prontophot.com/",
       "TAG_MOCK": "#Bootstrap#Admin",
@@ -455,7 +455,7 @@ const galeryProyects = [
       "PRIORIDAD": "Alta",
       "LINK": "https://xpressrendering.com/",
       "TAG_MOCK": "",
-      "PAIS": "Estados Unidos",
+      "PAIS": "",
       "AÑO": "2020",
       "TAG_IMG": "Diseño y desarrollo de página web para Empresa de renderizado"
   },
@@ -616,7 +616,7 @@ const galeryProyects = [
       "PRIORIDAD": "Alta",
       "LINK": "https://www.approve-itsa.com/",
       "TAG_MOCK": "",
-      "PAIS": "Estados Unidos",
+      "PAIS": "",
       "AÑO": "2018",
       "TAG_IMG": "Diseño y desarrollo de página web para Empresa de telecomunicaciones "
   },
@@ -1352,7 +1352,7 @@ const galeryProyects = [
       "PRIORIDAD": "Media",
       "LINK": "https://spadahunts.com/",
       "TAG_MOCK": "",
-      "PAIS": "Estados Unidos",
+      "PAIS": "Estados-Unidos",
       "AÑO": "2017",
       "TAG_IMG": "Diseño y desarrollo de página web para Página web de un videojuego"
   },
@@ -1490,7 +1490,7 @@ const galeryProyects = [
       "PRIORIDAD": "Alta",
       "LINK": "https://decoloresdc.com/",
       "TAG_MOCK": "",
-      "PAIS": "Estados Unidos",
+      "PAIS": "",
       "AÑO": "2022",
       "TAG_IMG": "Diseño y desarrollo de página web para Escuela Montessori"
   },
@@ -1808,7 +1808,7 @@ const galeryProyects = [
       "MOBILE": "",
       "MOCK": "Listo",
       "LENGUAJE": "React, Laravel",
-      "CARACTERISTICAS": "Gestión-de-proyectos, Autoadministrable, chat-interno",
+      "CARACTERISTICAS": "Gestión-de-proyectos, Autoadministrable, Chat-interno",
       "PRIORIDAD": "Alta ",
       "LINK": "",
       "TAG_MOCK": "",
@@ -1950,7 +1950,7 @@ const galeryProyects = [
       "PRIORIDAD": "Media",
       "LINK": "https://popatik.com/",
       "TAG_MOCK": "",
-      "PAIS": "País Vazco",
+      "PAIS": "País-Vazco",
       "AÑO": "2022",
       "TAG_IMG": "Diseño y desarrollo de página web para Estudio de diseño y comunicación"
   },
@@ -2206,8 +2206,11 @@ const trasnformGaleryJson = (galeryJson) => {
     proyect.CARACTERISTICAS = proyect.CARACTERISTICAS === "" ? proyect.CARACTERISTICAS = "Otros" : proyect.CARACTERISTICAS
     proyect.CARACTERISTICAS = proyect.CARACTERISTICAS.replaceAll(/\s/g, "").split(",");
     proyect.PROYECTO = proyect.PROYECTO.trim();
+    /* agregando elementos adicionales */
     proyect.IMG_SRC = `${proyect.ID}.png`;
+    proyect.IMG_COUNTRY = `${proyect.PAIS ? proyect.PAIS+".png" : ""}`;
     proyect.GROUPS= JSON.stringify(proyect.CARACTERISTICAS.concat(proyect.LENGUAJE, proyect.CATEGORIA))
+
     /* aca puedo ir agregando las categorias que necesito y sus titulos */
     getCategories(proyect.CATEGORIA, "Tipos de Web");
     getCategories(proyect.LENGUAJE, "Lenguajes");

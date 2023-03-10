@@ -49,9 +49,7 @@ function DesktopGalery({ firstTitle, secondTitle }) {
   }, [sortedJson]);
 
   useEffect(() => {
-    if (shuffleRef) {
-      shuffleRef.resetItems();
-    }
+    if (shuffleRef) shuffleRef.resetItems();
   }, [proyects]);
 
   const handleChange = (e) => {
@@ -152,14 +150,18 @@ function DesktopGalery({ firstTitle, secondTitle }) {
                   data-groups={proyect.GROUPS}
                 >
                   <div className="position-relative inner-box">
-                    <div className="image position-relative ">
+                 
+                    <div className="image">
                       <img
                         src={`images/portfolio/${proyect.IMG_SRC}`}
                         alt={proyect.PROYECTO}
                         className="img-fluid d-block img-portfolio"
                       />
+                      {proyect.IMG_COUNTRY ? (
+                       <img src={`images/flags/${proyect.IMG_COUNTRY}`} className="card-flag" alt="Flag"/>
+                      ) : (<></>)}
                       <div className="overlay-box">
-                        {proyect.LINK === "No funciona" ? (
+                        {proyect.LINK === "No funciona" || proyect.LINK === "" ? (
                           <></>
                         ) : (
                           <a
@@ -172,8 +174,8 @@ function DesktopGalery({ firstTitle, secondTitle }) {
 
                         <div className="overlay-inner">
                           <div className="overlay-content">
-                            <h5 className="mb-0">{proyect.PROYECTO}</h5>
-                            <p>{proyect.CATEGORIA.join()}</p>
+                            <p className="ff-circularLight card-title">{proyect.TITULO}</p>
+                            <h5 className="ff-circularBold fc-lightBlue card-title-proyect">{proyect.PROYECTO}</h5>
                           </div>
                         </div>
                       </div>

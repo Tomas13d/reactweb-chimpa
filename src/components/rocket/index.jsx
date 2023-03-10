@@ -8,7 +8,6 @@ function Rocket() {
     const[startAnimation, setStartAnimation] = useState(true)
     const interval= useRef(1)
 
-    
   const subirCohete = () => {
     let cohete = document.getElementById("cohete-form");
     let form = document.getElementById("form-contact");
@@ -44,7 +43,7 @@ function Rocket() {
             <h3 class="text-center mb-5">
               ¿Listo para evolucionar en la jungla digital?
             </h3>
-            <button onClick={()=> subirCohete()} class="mb-5 btn-power btn">
+            <button onClick={()=> subirCohete()} class="mb-5 btn-power ">
               <ButtonIllustration />
             </button>
           </div>
@@ -74,8 +73,7 @@ function Rocket() {
                     loading="lazy"
                     width="19.738"
                     height="19.733"
-                    src="images/icon-arrow-form.svg"
-                  />
+                    src="images/icon-arrow-form.svg" alt="arrow"/>
                   <h3 class="fc-darkBlue-01 fs-32 text-center ms-2">
                     Dejanos tu mensaje o inquietud
                   </h3>
@@ -109,6 +107,7 @@ function Rocket() {
 
                   <a
                     target="_blank"
+                    rel="noreferrer"
                     class="d-block d-md-none"
                     href="https://api.whatsapp.com/send?phone=+5493516503470&amp;text=Buenos%20días,%20quiero%20mas%20info%20sobre%20desarrollo%20web"
                   >
@@ -119,12 +118,14 @@ function Rocket() {
                         width="21.847"
                         height="21.839"
                         class="me-3"
+                        alt="phone"
                       />
                       <p class="fc-darkBlue-01 mb-0">351 650-3470</p>
                     </div>
                   </a>
                   <a
                     target="_blank"
+                    rel="noreferrer"
                     class="d-none d-md-block"
                     href="https://web.whatsapp.com/send?phone=+5493516503470&amp;text=Buenos%20días,%20quiero%20mas%20info%20sobre%20desarrollo%20web"
                   >

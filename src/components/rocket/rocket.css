@@ -147,6 +147,8 @@
 }
 .btn-power {
     animation: pulse 2s infinite;
+    background-color: transparent;
+    border: none;
 }
 
 .btn-power path {

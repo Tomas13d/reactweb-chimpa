@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import AOS from "aos";
 import Shuffle from "shufflejs";
-import { Container, Row } from "react-bootstrap";
+import { Container, Form, Row } from "react-bootstrap";
 import FilterDropdown from "../filterDropdown";
 import { sortHandlerOptions } from "../sortFunctions";
 import { proyectJson, allCategories } from "../../../utils/galery";
@@ -28,6 +28,8 @@ function DesktopGalery({ firstTitle, secondTitle }) {
     setShuffleRef(shuffle);
     if (proyectJson) setProyects(proyectJson);
     if (allCategories) setCategories(allCategories);
+    let options = sortHandlerOptions("relevant");
+    shuffle.sort(options);
   }, []);
 
   useEffect(() => {
@@ -76,49 +78,15 @@ function DesktopGalery({ firstTitle, secondTitle }) {
       <div className="mb-5">
         <div className="yellow-separator mb-4"></div>
         <h4 className="mb-1 ff-circularBold">{firstTitle}</h4>
-        <h4 className="fc-lightBlue mb-1 ff-circularBold">{secondTitle}</h4>
+        <h4 className="fc-lightBlue mb-1 ff-circularBlack">{secondTitle}</h4>
       </div>
       <Row className="galery">
         <div className="col-12 d-flex justify-content-end">
-          <div className="dropdown">
-            <button
-              className="dropdown-toggle order-by"
-              type="button"
-              id="dropdownMenuButton"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-              onClick={() => setShow(!show)}
-            >
-              Ordenar Por
-            </button>
-            <div
-              className={`dropdown-menu menu-options ${show ? "show" : ""}`}
-              aria-labelledby="dropdownMenuButton"
-            >
-              <option
-                className="dropdown-item custon-drop-item"
-                value="relevant"
-                onClick={handleSort}
-              >
-                Más Relevante
-              </option>
-              <option
-                className="dropdown-item custon-drop-item"
-                value="newer"
-                onClick={handleSort}
-              >
-                Más Reciente
-              </option>
-              <option
-                className="dropdown-item custon-drop-item"
-                value="older"
-                onClick={handleSort}
-              >
-                Más Antiguo
-              </option>
-            </div>
-          </div>
+        <select class="form-select order-by" onChange={handleSort}>
+          <option value="relevant">Ordenar por relevancia</option>
+          <option value="newer">Ordenar por más reciente</option>
+          <option value="older" >Ordenar por más antiguo</option>
+        </select>
         </div>
         <div className={`${showFilterNav ? "col-3" : "col-1"}`}>
           <FilterDropdown
@@ -178,6 +146,9 @@ function DesktopGalery({ firstTitle, secondTitle }) {
 
                         <div className="overlay-inner">
                           <div className="overlay-content">
+                            <p className="ff-circularLight card-title">
+                              {proyect.AÑO}
+                            </p>
                             <p className="ff-circularLight card-title">
                               {proyect.TITULO}
                             </p>

@@ -141,6 +141,10 @@ strong {
   font-family: var(--circularLight);
 }
 
+.ff-circularBlack {
+  font-family: var(--circularBlack);
+}
+
 .bg-lightBlue {
   background: var(--lightBlue);
 }

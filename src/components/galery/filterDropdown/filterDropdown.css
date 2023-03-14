@@ -43,9 +43,23 @@
   width: 200px;
 }
 
+
 .dropdown-custom::-webkit-scrollbar {
-  display: none;
+  width: 7px;
 }
+
+/* Track */
+.dropdown-custom::-webkit-scrollbar-track {
+  background: #f3f1f181;
+  border-radius: 20px;
+}
+
+/* Handle */
+.dropdown-custom::-webkit-scrollbar-thumb {
+  background: var(--lightBlue-02);
+  border-radius: 20px;
+}
+
 
 .show {
   opacity: 1;

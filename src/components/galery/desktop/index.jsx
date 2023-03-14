@@ -147,14 +147,16 @@ function DesktopGalery({ firstTitle, secondTitle }) {
                         <div className="overlay-inner">
                           <div className="overlay-content">
                             <p className="ff-circularLight card-title">
-                              {proyect.AÑO}
-                            </p>
-                            <p className="ff-circularLight card-title">
                               {proyect.TITULO}
                             </p>
+                            <div className="title-and-year">
                             <h5 className="ff-circularBold fc-lightBlue card-title-proyect">
                               {proyect.PROYECTO}
                             </h5>
+                            <p className="ff-circularLight card-year">
+                              {proyect.AÑO}
+                            </p>
+                            </div>
                           </div>
                         </div>
                       </div>

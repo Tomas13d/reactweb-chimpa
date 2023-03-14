@@ -1,10 +1,9 @@
 header.proyectos {
   height: 100vh;
-  background: url(../../../public/images/img-header-proyectos.svg) right
+  background: url(../../../public/images/monito_solo.svg) left 30%
+  bottom 5% no-repeat, url(../../../public/images/img-header-proyectos.svg) right
       bottom no-repeat,
-    url(../../../public/images/bg-header-desarrollo-web.jpg) center center
-      no-repeat;
-  background-size: 43vw, cover;
+    url(../../../public/images/fondo_computadora.svg) center bottom;
 }
 
 
@@ -12,9 +11,9 @@ header.proyectos {
   header.proyectos {
     background: url(../../../public/images/img-header-proyectos.svg) center
         bottom no-repeat,
-      url(../../../public/images/bg-header-desarrollo-web.jpg) center center
+      url(../../../public/images/fondo_computadora.svg) center center
         no-repeat;
-    background-size: 56vw, cover;
+    background-size: 48vw, cover;
   }
   
 }
@@ -23,9 +22,9 @@ header.proyectos {
   header.proyectos {
     background: url(../../../public/images/img-header-proyectos.svg) center
         bottom no-repeat,
-      url(../../../public/images/bg-header-desarrollo-web.jpg) center center
+      url(../../../public/images/Fondo_mobile_selva.svg) center center
         no-repeat;
-    background-size: 100vw, cover;
+        background-size: 90vw, cover;
   }
   
 }

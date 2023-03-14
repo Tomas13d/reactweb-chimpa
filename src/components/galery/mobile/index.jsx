@@ -74,15 +74,15 @@ function GaleryMobile({ secondTitle }) {
               loading="lazy"
             />
             <div className="mobile-galey-card-info">
-              <h5 className="ff-circularBold fc-lightBlue">
+              <h5 className="ff-circularBold fc-lightBlue proyect-title-mobile">
                 {proyect.PROYECTO}
               </h5>
-              <p className="ff-circularLight">{proyect.TITULO}</p>
+              <p className="ff-circularLight card-title-mobile">{proyect.TITULO}</p>
               {proyect.LINK === "No funciona" || proyect.LINK === "" ? (
                 <></>
               ) : (
-                <a href={proyect.LINK} className="fc-yellow ff-circularLight">
-                  Ver web <i className="bi bi-chevron-right"></i>
+                <a href={proyect.LINK} className="fc-yellow ff-circularLight link-card-mobile">
+                  Ver web <i className="bi bi-chevron-right icon-link"></i>
                 </a>
               )}
             </div>
@@ -93,7 +93,7 @@ function GaleryMobile({ secondTitle }) {
             className={`see-more-card`}
             onClick={() => setShowMore(showMore + loadAmount.current)}
           >
-            <p>Ver más proyectos</p>
+            <p className="ff-circularLight see-more-text">Ver más proyectos</p>
           </div>
         ) : (
           <></>

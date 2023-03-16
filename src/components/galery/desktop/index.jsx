@@ -82,7 +82,7 @@ function DesktopGalery({ firstTitle, secondTitle }) {
       </div>
       <Row className="galery">
         <div className="col-12 d-flex justify-content-end">
-        <select class="form-select order-by" onChange={handleSort}>
+        <select className="form-select order-by" onChange={handleSort}>
           <option value="relevant">Ordenar por relevancia</option>
           <option value="newer">Ordenar por más reciente</option>
           <option value="older" >Ordenar por más antiguo</option>

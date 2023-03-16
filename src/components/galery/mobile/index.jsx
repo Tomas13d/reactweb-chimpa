@@ -47,6 +47,7 @@ function GaleryMobile({ secondTitle }) {
     setShowMore(5);
   };
 
+  
   return (
     <Container className="galery-section">
       <div className="mb-5 d-flex justify-content-center">

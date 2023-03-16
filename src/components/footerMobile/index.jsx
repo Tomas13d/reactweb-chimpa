@@ -19,7 +19,7 @@ function FooterMobile() {
                 </div>
             </div>
             <div className="col-4 d-flex justify-content-center">
-                <a href="tel:+543516503470" class="text-center">
+                <a href="tel:+543516503470" className="text-center">
                     <img loading="lazy" width="23.847" height="23.839" alt="phone" src="images/icon-phone.svg"/>
                 </a>
             </div>

@@ -1,12 +1,38 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Form } from "react-bootstrap";
 import "./filterDropdown.css";
 
-function FilterDropdown({ handleChange, categories, show, setShow, mobileSize }) {
+function FilterDropdown({
+  handleChange,
+  categories,
+  show,
+  setShow,
+  mobileSize,
+}) {
+  const menuDrop = useRef(null);
+  
+  useEffect(() => {
+    const handler = (e) => {
+      if (!menuDrop.current.contains(e.target)) setShow(false);
+    };
+    document.addEventListener("mousedown", handler);
+    return () => {
+      document.removeEventListener("mousedown", handler);
+    };
+  });
+
   return (
-    <div className="filter-cont sticky-column">
-      <i className={`bi bi-sliders filter-icon ${show ? "no-show" : ""}`} onClick={() => setShow(true)}></i>
-      <div className={`dropdown-custom ${show ? "show" : "hidden"} ${mobileSize ? "mobileSize": "generalSize"}`}>
+    <div className="filter-cont sticky-column" ref={menuDrop}>
+      <i
+        className={`bi bi-sliders filter-icon ${show ? "no-show" : ""}`}
+        onClick={() => setShow(true)}
+      ></i>
+      <div
+        ref={menuDrop}
+        className={`dropdown-custom ${show ? "show" : "hidden"} ${
+          mobileSize ? "mobileSize" : "generalSize"
+        }`}
+      >
         <div className="filter-drop-header d-flex justify-content-between align-items-baseline">
           <div className="icon-and-header">
             <i
@@ -26,7 +52,7 @@ function FilterDropdown({ handleChange, categories, show, setShow, mobileSize })
           <h6 className="filter-by">Filtrar Por</h6>
           {Object.keys(categories).map((filterHeader, index) => (
             <React.Fragment key={index + new Date().getTime}>
-              <h6 className="ff-circularBold category-header" >
+              <h6 className="ff-circularBold category-header">
                 {filterHeader}
               </h6>
               <Form className="inputs-cont">
@@ -39,7 +65,11 @@ function FilterDropdown({ handleChange, categories, show, setShow, mobileSize })
                     >
                       <Form.Check
                         type="checkbox"
-                        label={category === "all" ? "Todos" : category.replaceAll("-"," ")}
+                        label={
+                          category === "all"
+                            ? "Todos"
+                            : category.replaceAll("-", " ")
+                        }
                         name="shuffle-filter"
                         className="custom-checkbox"
                         onChange={handleChange}

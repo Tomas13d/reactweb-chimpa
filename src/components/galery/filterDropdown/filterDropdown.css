@@ -28,6 +28,7 @@
   top: -5px;
   left: 0;
   position: absolute;
+  display: none;
   z-index: -1;
   height: calc(100vh - 130px);
   overflow-y: scroll;
@@ -62,6 +63,7 @@
 
 
 .show {
+  display: block;
   opacity: 1;
 }
 

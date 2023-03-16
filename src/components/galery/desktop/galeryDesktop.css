@@ -84,7 +84,7 @@
   left: 0px;
   bottom: 10px;
   z-index: 1;
-  padding: 0px 10px;
+  padding: 10px 15px;
 }
 
 .inner-box .image .overlay-box .overlay-inner .overlay-content i {
@@ -113,11 +113,12 @@
   color: #ffffff;
   transform: translateX(-150px);
   transition: all 0.5s;
+  max-width: 220px;
 }
 .card-title-proyect {
   font-size: 18px;
   margin-bottom: 0px;
-  padding: 0px 8px;
+  padding: 0px 8px 10px 8px;
   margin-top: 2px;
   text-transform: capitalize;
   color: var(--lightBlue);
@@ -133,8 +134,8 @@
 }
 
 .card-year{
-  padding: 0;
-  font-size: 14px;
+  padding: 5px;
+  font-size: 18px;
   margin: 0;
   color: var(--lightBlue);
 }

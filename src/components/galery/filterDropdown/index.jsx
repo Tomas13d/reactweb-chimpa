@@ -10,15 +10,17 @@ function FilterDropdown({
   mobileSize,
 }) {
   const menuDrop = useRef(null);
-  
+
   useEffect(() => {
-    const handler = (e) => {
-      if (!menuDrop.current.contains(e.target)) setShow(false);
-    };
-    document.addEventListener("mousedown", handler);
-    return () => {
-      document.removeEventListener("mousedown", handler);
-    };
+    if (mobileSize) {
+      const handler = (e) => {
+        if (!menuDrop.current.contains(e.target)) setShow(false);
+      };
+      document.addEventListener("mousedown", handler);
+      return () => {
+        document.removeEventListener("mousedown", handler);
+      };
+    }
   });
 
   return (

@@ -3,7 +3,8 @@ header.proyectos {
   background: url(../../../public/images/monito_solo.svg) left 30%
   bottom 5% no-repeat, url(../../../public/images/img-header-proyectos.svg) right
       bottom no-repeat,
-    url(../../../public/images/fondo_computadora.svg) center bottom;
+    url(../../../public/images/fondo_computadora.svg) center bottom no-repeat;
+    background-size: 20vh, 100vh, cover;
 }
 
 
@@ -13,7 +14,7 @@ header.proyectos {
         bottom no-repeat,
       url(../../../public/images/fondo_computadora.svg) center center
         no-repeat;
-    background-size: 48vw, cover;
+        background-size: 14vh, 70vh, cover;
   }
   
 }

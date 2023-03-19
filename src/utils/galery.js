@@ -855,7 +855,7 @@ const galeryProyects = [
     TAG_IMG: "Diseño y desarrollo de página web para Alquiler de autos",
   },
   {
-    ID: "39",
+    ID: "27",
     PROYECTO: "Ralseff",
     TITULO: "Plataforma integral para cursos online",
     DESCRIPCION:
@@ -996,7 +996,7 @@ const galeryProyects = [
     TAG_IMG: "Diseño y desarrollo de página web para Seguridad electrónica",
   },
   {
-    ID: "46",
+    ID: "45",
     PROYECTO: "Domo",
     TITULO: "Seguridad electrónica",
     DESCRIPCION: "",
@@ -1368,7 +1368,7 @@ const galeryProyects = [
     TAG_IMG: "Diseño y desarrollo de página web para Venta de muebles ",
   },
   {
-    ID: "62",
+    ID: "75",
     PROYECTO: "Spada",
     TITULO: "Página web de un videojuego",
     DESCRIPCION: "",

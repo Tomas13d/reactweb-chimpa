@@ -33,7 +33,7 @@ function NavbarApp() {
     <nav id="navbar" className={`navbar custom-nav `}>
         <Container fluid className="container position-relative">
             <Navbar.Brand href="/" className="d-none d-md-block"><ChimpanceLogo/></Navbar.Brand>
-            <Navbar.Brand href="/" className="col-12 d-flex justify-content-center d-md-none"><ChimpanceLogo/></Navbar.Brand>
+            <Navbar.Brand href="/" className="col-12 d-flex justify-content-center d-md-none"><ImgIsoOjos customClass="mobile-eyes"/></Navbar.Brand>
             <div className="d-flex align-items-center">
                 <a id="contact_nav" rel="noreferrer" href="https://web.whatsapp.com/send?phone=+5493516503470&amp;text=Buenos%20días,%20quiero%20mas%20info%20sobre%20desarrollo%20web" target="_blank"  className={`btn btn-white d-none ${activeMenu ? "" : "d-md-block"}`}>Contactanos</a>
                 <div className="d-none d-md-block">

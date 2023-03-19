@@ -13,9 +13,13 @@ function NavbarApp() {
     navRef.current = navBackground
     useEffect(() => {
       const handleScroll = () => {
-        const show = window.scrollY > 50
-        if (navRef.current !== show) {
-          setNavBackground(show)
+        if(navBackground){
+          return
+        }
+        if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+            document.getElementById("navbar").classList.add('background-filter');
+        } else {
+            document.getElementById("navbar").classList.remove('background-filter');
         }
       }
       document.addEventListener('scroll', handleScroll)
@@ -23,9 +27,10 @@ function NavbarApp() {
         document.removeEventListener('scroll', handleScroll)
       }
     }, [])
+
   return (
     <>
-    <Navbar id="navbar" className={`navbar custom-nav ${navBackground ? "background-filter" : ""}`}>
+    <nav id="navbar" className={`navbar custom-nav `}>
         <Container fluid className="container position-relative">
             <Navbar.Brand href="/" className="d-none d-md-block"><ChimpanceLogo/></Navbar.Brand>
             <Navbar.Brand href="/" className="col-12 d-flex justify-content-center d-md-none"><ChimpanceLogo/></Navbar.Brand>
@@ -37,7 +42,7 @@ function NavbarApp() {
                 </div>
             </div>
         </Container>
-    </Navbar>
+    </nav>
     <Container className="menu-wrap nav-mobile">
         <div className={`menu ${activeMenu ? "checked" : ""}`} id="menu">
             <div>

@@ -6,11 +6,11 @@
   height: 6.5rem;
   position: fixed;
   padding: 1.25rem 0;
-  transition: all 0.5s ease-in-out;
+  transition: all.5s ease-in-out;
 }
 
 .background-filter {
-  backdrop-filter: blur(15px) brightness(80%) contrast(100%);
+  backdrop-filter: contrast(100%) brightness(80%)  blur(15px);
 }
 
 .custom-nav .dropdown .btn {

@@ -1,47 +1,41 @@
-/*  shufflejs sort functions */
-export const sortByPriority = (element) => {
-  const priority = element.dataset.priority;
-  const priorityOrder = {
-    Alta: 1,
-    Media: 2,
-    "Media - Baja": 3,
-    Baja: 4,
-    "Baja Baja": 5,
-  };
-  // Compare the priorities
-  return priorityOrder[priority] || 999;
+
+export const sortByPriority = (proyects) => {
+  const order = proyects
+  order.sort((a, b) => {
+    const priorities = ['Alta', 'Media', 'Media - Baja', 'Baja', 'Baja Baja'];
+    const priorityA = priorities.indexOf(a.PRIORIDAD);
+    const priorityB = priorities.indexOf(b.PRIORIDAD);
+    return priorityA - priorityB;
+  });
+  return order;
 };
 
-export const sortByDate = (element) => {
-  return element.dataset.created;
+export const sortOldest = (proyects) => {
+  let sorted = proyects
+  sorted.sort((a, b) => {
+    if (a.AÑO < b.AÑO) {
+      return -1;
+    }
+    if (a.AÑO > b.AÑO) {
+      return 1;
+    }
+    return 0;
+  });
+  return sorted
 };
 
-export const sortHandlerOptions = (value) => {
-  let options = {};
-  switch (value) {
-    case "newer":
-      options = {
-        reverse: true,
-        by: sortByDate,
-      };
-      break;
-    case "older":
-      options = {
-        reverse: false,
-        by: sortByDate,
-      };
-      break;
-    case "relevant":
-      options = {
-        by: sortByPriority,
-      };
-      break;
-
-    default:
-      options = {};
-  }
-
-  return options;
+export const sortNewer = (proyects) => {
+  let sorted = proyects
+  sorted.sort((a, b) => {
+    if (a.AÑO > b.AÑO) {
+      return -1;
+    }
+    if (a.AÑO < b.AÑO) {
+      return 1;
+    }
+    return 0;
+  });
+  return sorted
 };
 
 /*  Mobile Filter */

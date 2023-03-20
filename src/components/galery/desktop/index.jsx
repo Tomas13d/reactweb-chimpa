@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import AOS from "aos";
 import Shuffle from "shufflejs";
-import { Container, Form, Row } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import FilterDropdown from "../filterDropdown";
-import { sortHandlerOptions } from "../sortFunctions";
+import { sortByDate2, sortByPriority, sortByPriority2, sortHandlerOptions, sortNewer, sortOldest } from "../sortFunctions";
 import { proyectJson, allCategories } from "../../../utils/galery";
 import "./galeryDesktop.css";
 
@@ -12,12 +12,21 @@ function DesktopGalery({ firstTitle, secondTitle }) {
   const [categories, setCategories] = useState([""]);
   const [activeFilter, setActiveFilters] = useState([]);
   const [shuffleRef, setShuffleRef] = useState();
-  const [show, setShow] = useState(false);
   const [showMore, setShowMore] = useState(1);
   const [showFilterNav, setShowFilterNav] = useState(false);
   const [inLast, setInLast] = useState(false);
+  const [flag, setFlag] = useState(false)
+
+
   const lastImage = useRef(null);
   const loadAmount = useRef(20);
+
+
+  useEffect(()=>{
+    if (proyectJson) setProyects(sortByPriority(proyectJson));
+    if (allCategories) setCategories(allCategories);
+    setFlag(flag => !flag)
+  },[])
 
   useEffect(() => {
     AOS.init({ once: true });
@@ -26,11 +35,8 @@ function DesktopGalery({ firstTitle, secondTitle }) {
       buffer: 1,
     });
     setShuffleRef(shuffle);
-    if (proyectJson) setProyects(proyectJson);
-    if (allCategories) setCategories(allCategories);
-    let options = sortHandlerOptions("relevant");
-    shuffle.sort(options);
-  }, []);
+  }, [flag]);
+
 
   useEffect(() => {
     if (shuffleRef) shuffleRef.layout();
@@ -67,11 +73,24 @@ function DesktopGalery({ firstTitle, secondTitle }) {
   };
 
   const handleSort = (e) => {
-    let value = e.target.value;
-    let options = sortHandlerOptions(value);
-    shuffleRef.sort(options);
-    setShowMore(1);
+    let value = e.target.value; 
+    shuffleRef.remove(proyects)
+    if(value === "relevant"){
+      console.log("ENTROOO");
+      setProyects(sortByPriority(proyects))
+    } 
+    if(value === "older") {
+      setProyects(sortOldest(proyects))
+    }
+    if(value === "newer"){
+
+      setProyects(sortNewer(proyects))
+    }
+
+    setShowMore(1)  
+    setFlag(flag => !flag)
   };
+
 
   return (
     <Container className="galery-section">

@@ -1,8 +1,7 @@
-
 export const sortByPriority = (proyects) => {
-  const order = proyects
+  const order = proyects;
   order.sort((a, b) => {
-    const priorities = ['Alta', 'Media', 'Media - Baja', 'Baja', 'Baja Baja'];
+    const priorities = ["Alta", "Media", "Media - Baja", "Baja", "Baja Baja"];
     const priorityA = priorities.indexOf(a.PRIORIDAD);
     const priorityB = priorities.indexOf(b.PRIORIDAD);
     return priorityA - priorityB;
@@ -11,7 +10,7 @@ export const sortByPriority = (proyects) => {
 };
 
 export const sortOldest = (proyects) => {
-  let sorted = proyects
+  let sorted = proyects;
   sorted.sort((a, b) => {
     if (a.AÑO < b.AÑO) {
       return -1;
@@ -21,11 +20,11 @@ export const sortOldest = (proyects) => {
     }
     return 0;
   });
-  return sorted
+  return sorted;
 };
 
 export const sortNewer = (proyects) => {
-  let sorted = proyects
+  let sorted = proyects;
   sorted.sort((a, b) => {
     if (a.AÑO > b.AÑO) {
       return -1;
@@ -35,7 +34,7 @@ export const sortNewer = (proyects) => {
     }
     return 0;
   });
-  return sorted
+  return sorted;
 };
 
 /*  Mobile Filter */

@@ -3,7 +3,11 @@ import AOS from "aos";
 import Shuffle from "shufflejs";
 import { Container, Row } from "react-bootstrap";
 import FilterDropdown from "../filterDropdown";
-import { sortByDate2, sortByPriority, sortByPriority2, sortHandlerOptions, sortNewer, sortOldest } from "../sortFunctions";
+import {
+  sortByPriority,
+  sortNewer,
+  sortOldest,
+} from "../sortFunctions";
 import { proyectJson, allCategories } from "../../../utils/galery";
 import "./galeryDesktop.css";
 
@@ -15,18 +19,16 @@ function DesktopGalery({ firstTitle, secondTitle }) {
   const [showMore, setShowMore] = useState(1);
   const [showFilterNav, setShowFilterNav] = useState(false);
   const [inLast, setInLast] = useState(false);
-  const [flag, setFlag] = useState(false)
-
+  const [flag, setFlag] = useState(false);
 
   const lastImage = useRef(null);
   const loadAmount = useRef(20);
 
-
-  useEffect(()=>{
+  useEffect(() => {
     if (proyectJson) setProyects(sortByPriority(proyectJson));
     if (allCategories) setCategories(allCategories);
-    setFlag(flag => !flag)
-  },[])
+    setFlag((flag) => !flag);
+  }, []);
 
   useEffect(() => {
     AOS.init({ once: true });
@@ -36,7 +38,6 @@ function DesktopGalery({ firstTitle, secondTitle }) {
     });
     setShuffleRef(shuffle);
   }, [flag]);
-
 
   useEffect(() => {
     if (shuffleRef) shuffleRef.layout();
@@ -73,24 +74,14 @@ function DesktopGalery({ firstTitle, secondTitle }) {
   };
 
   const handleSort = (e) => {
-    let value = e.target.value; 
-    shuffleRef.remove(proyects)
-    if(value === "relevant"){
-      console.log("ENTROOO");
-      setProyects(sortByPriority(proyects))
-    } 
-    if(value === "older") {
-      setProyects(sortOldest(proyects))
-    }
-    if(value === "newer"){
-
-      setProyects(sortNewer(proyects))
-    }
-
-    setShowMore(1)  
-    setFlag(flag => !flag)
+    let value = e.target.value;
+    shuffleRef.remove(proyects);
+    if (value === "relevant") setProyects(sortByPriority(proyects));
+    if (value === "older") setProyects(sortOldest(proyects));
+    if (value === "newer") setProyects(sortNewer(proyects));
+    setShowMore(1);
+    setFlag((flag) => !flag);
   };
-
 
   return (
     <Container className="galery-section">
@@ -101,11 +92,11 @@ function DesktopGalery({ firstTitle, secondTitle }) {
       </div>
       <Row className="galery">
         <div className="col-12 d-flex justify-content-end">
-        <select className="form-select order-by" onChange={handleSort}>
-          <option value="relevant">Ordenar por relevancia</option>
-          <option value="newer">Ordenar por más reciente</option>
-          <option value="older" >Ordenar por más antiguo</option>
-        </select>
+          <select className="form-select order-by" onChange={handleSort}>
+            <option value="relevant">Ordenar por relevancia</option>
+            <option value="newer">Ordenar por más reciente</option>
+            <option value="older">Ordenar por más antiguo</option>
+          </select>
         </div>
         <div className={`${showFilterNav ? "col-3" : "col-1"}`}>
           <FilterDropdown
@@ -169,12 +160,12 @@ function DesktopGalery({ firstTitle, secondTitle }) {
                               {proyect.TITULO}
                             </p>
                             <div className="title-and-year">
-                            <h5 className="ff-circularBold fc-lightBlue card-title-proyect">
-                              {proyect.PROYECTO}
-                            </h5>
-                            <p className="ff-circularLight card-year">
-                              {proyect.AÑO}
-                            </p>
+                              <h5 className="ff-circularBold fc-lightBlue card-title-proyect">
+                                {proyect.PROYECTO}
+                              </h5>
+                              <p className="ff-circularLight card-year">
+                                {proyect.AÑO}
+                              </p>
                             </div>
                           </div>
                         </div>

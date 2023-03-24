@@ -1618,7 +1618,7 @@ const galeryProyects = [
     MOBILE: "",
     MOCK: "Listo",
     LENGUAJE: "Angular, Laravel, PHP, Bootstrap",
-    CARACTERISTICAS: "Autoadministrable, Gestión-de-clientes ",
+    CARACTERISTICAS: "Autoadministrable, Gestión-de-clientes",
     PRIORIDAD: "Alta",
     LINK: "https://app.bhiviajes.com.ar/home/dashboard",
     TAG_MOCK: "",

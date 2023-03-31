@@ -69,7 +69,7 @@ function GaleryMobile({ secondTitle }) {
         {segmentedProjects.map((proyect, i) => (
           <div className={`mobile-galery-card`} key={i + new Date().getTime}>
             <img
-              src={`images/portfolio/${proyect.IMG_SRC}`}
+              src={`images/portfolioChimpa/${proyect.IMG_SRC}`}
               alt={proyect.PROYECTO}
               className="mobile-galery-img"
               loading="lazy"

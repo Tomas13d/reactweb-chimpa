@@ -128,7 +128,7 @@ function DesktopGalery({ firstTitle, secondTitle }) {
                   <div className="position-relative inner-box">
                     <div className="image">
                       <img
-                        src={`images/portfolio/${proyect.IMG_SRC}`}
+                        src={`images/portfolioChimpa/${proyect.IMG_SRC}`}
                         alt={proyect.PROYECTO}
                         className="img-fluid d-block img-portfolio"
                       />

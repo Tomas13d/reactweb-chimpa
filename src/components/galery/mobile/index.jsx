@@ -71,8 +71,8 @@ function GaleryMobile({ secondTitle }) {
             <img
               src={`images/portfolioChimpa/${proyect.IMG_SRC}`}
               alt={proyect.PROYECTO}
-              className="mobile-galery-img"
               loading="lazy"
+              className="mobile-galery-img"
             />
             <div className="mobile-galey-card-info">
               <h5 className="ff-circularBold fc-lightBlue proyect-title-mobile">

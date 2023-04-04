@@ -130,6 +130,7 @@ function DesktopGalery({ firstTitle, secondTitle }) {
                       <img
                         src={`images/portfolioChimpa/${proyect.IMG_SRC}`}
                         alt={proyect.PROYECTO}
+                        loading="lazy"
                         className="img-fluid d-block img-portfolio"
                       />
                       {proyect.IMG_COUNTRY ? (

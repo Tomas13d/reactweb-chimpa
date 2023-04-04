@@ -2203,7 +2203,7 @@ const trasnformGaleryJson = (galeryJson) => {
 
     /* agregando elementos adicionales */
     proyect.IMG_SRC = `${proyect.ID}.png`;
-    proyect.IMG_COUNTRY = `${proyect.PAIS ? proyect.PAIS + ".png" : ""}`;
+    proyect.IMG_COUNTRY = `${proyect.PAIS ? proyect.PAIS + ".svg" : ""}`;
     proyect.GROUPS = JSON.stringify(
       proyect.CARACTERISTICAS.concat(proyect.LENGUAJE, proyect.CATEGORIA)
     );

@@ -25,6 +25,10 @@ function DesktopGalery({ firstTitle, secondTitle }) {
     if (proyectJson) setProyects(sortByPriority(proyectJson));
     if (allCategories) setCategories(allCategories);
     setFlag((flag) => !flag);
+    setTimeout(()=>{
+      if (shuffleRef) shuffleRef.resetItems();
+      if (shuffleRef) shuffleRef.layout();
+    },2000)
   }, []);
 
   useEffect(() => {

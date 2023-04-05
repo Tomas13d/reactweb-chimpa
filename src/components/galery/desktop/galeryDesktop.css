@@ -25,6 +25,7 @@
   width: 100%;
   display: block;
   transition: all 0.3s;
+  min-width: "50px";
 }
 
 .inner-box .image .overlay-box {

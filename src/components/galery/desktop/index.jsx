@@ -19,7 +19,7 @@ function DesktopGalery({ firstTitle, secondTitle }) {
   const [flag, setFlag] = useState(false);
 
   const lastImage = useRef(null);
-  const loadAmount = useRef(15);
+  const loadAmount = useRef(9);
 
   useEffect(() => {
     if (proyectJson) setProyects(sortByPriority(proyectJson));

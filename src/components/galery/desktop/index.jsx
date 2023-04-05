@@ -25,10 +25,7 @@ function DesktopGalery({ firstTitle, secondTitle }) {
     if (proyectJson) setProyects(sortByPriority(proyectJson));
     if (allCategories) setCategories(allCategories);
     setFlag((flag) => !flag);
-    setTimeout(()=>{
-      if (shuffleRef) shuffleRef.resetItems();
-      if (shuffleRef) shuffleRef.layout();
-    },2000)
+   
   }, []);
 
   useEffect(() => {
@@ -52,6 +49,10 @@ function DesktopGalery({ firstTitle, secondTitle }) {
   }, [showMore, activeFilter]);
 
   useEffect(() => {
+    setTimeout(()=>{
+      if (shuffleRef) shuffleRef.layout();
+    },2000)
+    
     if (shuffleRef) shuffleRef.resetItems();
   }, [proyects]);
 

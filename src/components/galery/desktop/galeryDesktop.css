@@ -205,3 +205,8 @@
 .custon-drop-item:hover {
   background-color: var(--lightBlue-01) !important;
 }
+
+
+.no-visible{
+  display: none;
+}

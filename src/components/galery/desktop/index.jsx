@@ -11,6 +11,7 @@ import "./galeryDesktop.css";
 function DesktopGalery({ firstTitle, secondTitle }) {
   const [proyects, setProyects] = useState([]);
   const [categories, setCategories] = useState([""]);
+  const [loading, setLoading] = useState(true)
   const [activeFilter, setActiveFilters] = useState([]);
   const [shuffleRef, setShuffleRef] = useState();
   const [showMore, setShowMore] = useState(1);
@@ -25,17 +26,18 @@ function DesktopGalery({ firstTitle, secondTitle }) {
     if (proyectJson) setProyects(sortByPriority(proyectJson));
     if (allCategories) setCategories(allCategories);
     setFlag((flag) => !flag);
-   
   }, []);
 
   useEffect(() => {
-    AOS.init({ once: true });
-    const shuffle = new Shuffle(document.querySelector(".shuffle-wrapper"), {
-      itemSelector: ".shuffle-item",
-      buffer: 1,
-    });
-    setShuffleRef(shuffle);
-  }, [flag]);
+    if(!loading){
+      AOS.init({ once: true });
+      const shuffle = new Shuffle(document.querySelector(".shuffle-wrapper"), {
+        itemSelector: ".shuffle-item",
+        buffer: 1,
+      });
+      setShuffleRef(shuffle);
+    }
+  }, [loading, flag]);
 
   useEffect(() => {
     if (shuffleRef) shuffleRef.layout();
@@ -49,10 +51,11 @@ function DesktopGalery({ firstTitle, secondTitle }) {
   }, [showMore, activeFilter]);
 
   useEffect(() => {
-    setTimeout(()=>{
+    setTimeout(() => {
       if (shuffleRef) shuffleRef.layout();
-    },1500)
+    }, 1500);
     if (shuffleRef) shuffleRef.resetItems();
+    setLoading(false)
   }, [proyects]);
 
   const handleChange = (e) => {
@@ -91,7 +94,9 @@ function DesktopGalery({ firstTitle, secondTitle }) {
         <h4 className="mb-1 ff-circularBold">{firstTitle}</h4>
         <h4 className="fc-lightBlue mb-1 ff-circularBlack">{secondTitle}</h4>
       </div>
-      <Row className="galery">
+      {loading && <div class="spinner-grow text-primary" role="status">
+      </div>}
+      <Row className={`galery ${loading ? "no-visible" : ""}`}>
         <div className="col-12 d-flex justify-content-end">
           <select className="form-select order-by" onChange={handleSort}>
             <option value="relevant">Ordenar por relevancia</option>

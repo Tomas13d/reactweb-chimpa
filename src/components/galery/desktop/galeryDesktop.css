@@ -210,3 +210,8 @@
 .no-visible{
   display: none;
 }
+
+.loader{
+  margin-top: 20px;
+  color: var(--lightBlue);
+}

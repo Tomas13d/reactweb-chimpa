@@ -11,7 +11,7 @@ import "./galeryDesktop.css";
 function DesktopGalery({ firstTitle, secondTitle }) {
   const [proyects, setProyects] = useState([]);
   const [categories, setCategories] = useState([""]);
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
   const [activeFilter, setActiveFilters] = useState([]);
   const [shuffleRef, setShuffleRef] = useState();
   const [showMore, setShowMore] = useState(1);
@@ -28,14 +28,14 @@ function DesktopGalery({ firstTitle, secondTitle }) {
     setFlag((flag) => !flag);
   }, []);
 
-  useEffect(()=>{
+  useEffect(() => {
     setTimeout(() => {
-      setLoading(false)
+      setLoading(false);
     }, 1500);
-  },[lastImage.current])
+  }, [lastImage.current]);
 
   useEffect(() => {
-    if(!loading){
+    if (!loading) {
       AOS.init({ once: true });
       const shuffle = new Shuffle(document.querySelector(".shuffle-wrapper"), {
         itemSelector: ".shuffle-item",
@@ -61,7 +61,6 @@ function DesktopGalery({ firstTitle, secondTitle }) {
       if (shuffleRef) shuffleRef.layout();
     }, 1500);
     if (shuffleRef) shuffleRef.resetItems();
- 
   }, [proyects]);
 
   const handleChange = (e) => {
@@ -100,8 +99,11 @@ function DesktopGalery({ firstTitle, secondTitle }) {
         <h4 className="mb-1 ff-circularBold">{firstTitle}</h4>
         <h4 className="fc-lightBlue mb-1 ff-circularBlack">{secondTitle}</h4>
       </div>
-      {loading && <div class="spinner-grow text-primary" role="status">
-      </div>}
+      {loading && (
+        <div className="text-center w-100">
+          <div class="spinner-grow loader" role="status"></div>
+        </div>
+      )}
       <Row className={`galery ${loading ? "d-none" : ""}`}>
         <div className="col-12 d-flex justify-content-end">
           <select className="form-select order-by" onChange={handleSort}>

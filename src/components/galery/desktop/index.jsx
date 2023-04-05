@@ -28,6 +28,12 @@ function DesktopGalery({ firstTitle, secondTitle }) {
     setFlag((flag) => !flag);
   }, []);
 
+  useEffect(()=>{
+    setTimeout(() => {
+      setLoading(false)
+    }, 1500);
+  },[lastImage.current])
+
   useEffect(() => {
     if(!loading){
       AOS.init({ once: true });
@@ -55,7 +61,7 @@ function DesktopGalery({ firstTitle, secondTitle }) {
       if (shuffleRef) shuffleRef.layout();
     }, 1500);
     if (shuffleRef) shuffleRef.resetItems();
-    setLoading(false)
+ 
   }, [proyects]);
 
   const handleChange = (e) => {
@@ -96,7 +102,7 @@ function DesktopGalery({ firstTitle, secondTitle }) {
       </div>
       {loading && <div class="spinner-grow text-primary" role="status">
       </div>}
-      <Row className={`galery ${loading ? "no-visible" : ""}`}>
+      <Row className={`galery ${loading ? "d-none" : ""}`}>
         <div className="col-12 d-flex justify-content-end">
           <select className="form-select order-by" onChange={handleSort}>
             <option value="relevant">Ordenar por relevancia</option>

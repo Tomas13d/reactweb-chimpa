@@ -19,7 +19,7 @@ function DesktopGalery({ firstTitle, secondTitle }) {
   const [flag, setFlag] = useState(false);
 
   const lastImage = useRef(null);
-  const loadAmount = useRef(20);
+  const loadAmount = useRef(15);
 
   useEffect(() => {
     if (proyectJson) setProyects(sortByPriority(proyectJson));
@@ -52,7 +52,6 @@ function DesktopGalery({ firstTitle, secondTitle }) {
     setTimeout(()=>{
       if (shuffleRef) shuffleRef.layout();
     },1500)
-    
     if (shuffleRef) shuffleRef.resetItems();
   }, [proyects]);
 

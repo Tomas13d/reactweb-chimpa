@@ -3,12 +3,9 @@ import AOS from "aos";
 import Shuffle from "shufflejs";
 import { Container, Row } from "react-bootstrap";
 import FilterDropdown from "../filterDropdown";
-import {
-  sortByPriority,
-  sortNewer,
-  sortOldest,
-} from "../sortFunctions";
+import { sortByPriority, sortNewer, sortOldest } from "../sortFunctions";
 import { proyectJson, allCategories } from "../../../utils/galery";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import "./galeryDesktop.css";
 
 function DesktopGalery({ firstTitle, secondTitle }) {
@@ -127,12 +124,13 @@ function DesktopGalery({ firstTitle, secondTitle }) {
                 >
                   <div className="position-relative inner-box">
                     <div className="image">
-                      <img
+                      <LazyLoadImage
                         src={`images/portfolioChimpa/${proyect.IMG_SRC}`}
-                        alt={proyect.PROYECTO}
-                        loading="lazy"
                         className="img-fluid d-block img-portfolio"
+                        alt={proyect.PROYECTO}
+                        visibleByDefault={true}
                       />
+
                       {proyect.IMG_COUNTRY ? (
                         <img
                           src={`images/flags/${proyect.IMG_COUNTRY}`}

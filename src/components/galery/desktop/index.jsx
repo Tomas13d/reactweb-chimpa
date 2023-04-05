@@ -51,7 +51,7 @@ function DesktopGalery({ firstTitle, secondTitle }) {
   useEffect(() => {
     setTimeout(()=>{
       if (shuffleRef) shuffleRef.layout();
-    },2000)
+    },1500)
     
     if (shuffleRef) shuffleRef.resetItems();
   }, [proyects]);
